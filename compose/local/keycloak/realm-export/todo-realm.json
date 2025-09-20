@@ -1,0 +1,51 @@
+{
+  "realm": "todo",
+  "enabled": true,
+  "registrationAllowed": false,
+  "loginWithEmailAllowed": true,
+  "resetPasswordAllowed": true,
+  "sslRequired": "none",
+  "clients": [
+    {
+      "clientId": "todo",
+      "name": "Django (todo)",
+      "rootUrl": "http://localhost:8000",
+      "baseUrl": "/",
+      "redirectUris": [
+        "http://localhost:8000/accounts/oidc/keycloak/login/callback/"
+      ],
+      "webOrigins": [
+        "http://localhost:8000"
+      ],
+      "protocol": "openid-connect",
+      "publicClient": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "serviceAccountsEnabled": false,
+      "frontchannelLogout": true,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "dev-secret",
+      "attributes": {
+        "pkce.code.challenge.method": "S256"
+      }
+    }
+  ],
+  "users": [
+    {
+      "username": "testuser",
+      "enabled": true,
+      "emailVerified": true,
+      "email": "testuser@example.com",
+      "firstName": "Test",
+      "lastName": "User",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "testpassword",
+          "temporary": false
+        }
+      ]
+    }
+  ]
+}

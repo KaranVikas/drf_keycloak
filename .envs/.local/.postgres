@@ -1,0 +1,8 @@
+# Postgres environment variables for local development
+# Loaded by docker-compose.local.yml into postgres and django services
+
+POSTGRES_DB=todo
+POSTGRES_USER=todo
+POSTGRES_PASSWORD=todo
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
