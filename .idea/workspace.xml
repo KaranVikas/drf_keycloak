@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Added initial project setup files and configurations. Includes environment variables for Django, PostgreSQL, Keycloak, and Redis, along with editor, version control, pre-commit hooks, and templates for frontend and backend.">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.envs/.local/.django" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.envs/.local/.keycloak" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.envs/.local/.postgres" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.pre-commit-config.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.python-version" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.readthedocs.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/CONTRIBUTORS.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/compose/local/celery-beat/start" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/compose/local/celery-worker/start" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/compose/local/django/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/compose/local/django/entrypoint" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/compose/local/django/start" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/compose/local/flower/start" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/compose/local/keycloak/realm-export/todo-realm.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/compose/local/postgres/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/compose/production/django/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/compose/production/django/celery/beat/start" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/compose/production/django/celery/flower/start" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/compose/production/django/celery/worker/start" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/compose/production/django/entrypoint" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/compose/production/django/start" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/config/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/config/api_router.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/config/celery_app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/config/settings/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/config/settings/base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/config/settings/local.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/config/settings/production.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/config/settings/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/config/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/config/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/docker-compose.local.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/locale/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/locale/en_US/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/locale/fr_FR/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/locale/pt_BR/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/pyproject.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/conftest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/contrib/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/contrib/sites/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/contrib/sites/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/contrib/sites/migrations/0002_alter_domain_unique.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/contrib/sites/migrations/0003_set_site_domain_and_name.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/contrib/sites/migrations/0004_alter_options_ordering_domain.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/contrib/sites/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/static/css/project.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/static/fonts/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/static/images/favicons/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/static/js/project.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/templates/403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/templates/403_csrf.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/templates/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/templates/500.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/templates/account/base_manage_password.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/alert.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/badge.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/button.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/field.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/fields.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/panel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/table.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/templates/allauth/layouts/entrance.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/templates/allauth/layouts/manage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/templates/pages/about.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/templates/pages/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/templates/users/user_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/templates/users/user_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/users/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/users/adapters.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/users/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/users/api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/users/api/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/users/api/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/users/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/users/context_processors.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/users/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/users/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/users/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/users/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/users/tasks.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/users/tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/users/tests/api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/users/tests/api/test_openapi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/users/tests/api/test_urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/users/tests/api/test_views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/users/tests/factories.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/users/tests/test_admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/users/tests/test_forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/users/tests/test_models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/users/tests/test_tasks.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/users/tests/test_urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/users/tests/test_views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/users/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/users/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/uv.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/todo/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/todo/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/todo/eslint.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/todo/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/todo/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/todo/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/todo/public/vite.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/todo/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/todo/src/App.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/todo/src/assets/react.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/todo/src/contexts/AuthContext.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/todo/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/todo/src/keylcloak.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/todo/src/main.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/todo/tsconfig.app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/todo/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/todo/tsconfig.node.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/todo/vite.config.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;import os&#10;os.environ.setdefault(&quot;DATABASE_URL&quot;,&quot;postgres://{}:{}@{}:{}/{}&quot;.format(os.environ['POSTGRES_USER'], os.environ['POSTGRES_PASSWORD'], os.environ['POSTGRES_HOST'], os.environ['POSTGRES_PORT'], os.environ['POSTGRES_DB']))&#10;os.environ.setdefault(&quot;CELERY_BROKER_URL&quot;, os.environ['REDIS_URL'])&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" module-name="todo" is-module-sdk="true">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;import os&#10;os.environ.setdefault(&quot;DATABASE_URL&quot;,&quot;postgres://{}:{}@{}:{}/{}&quot;.format(os.environ['POSTGRES_USER'], os.environ['POSTGRES_PASSWORD'], os.environ['POSTGRES_HOST'], os.environ['POSTGRES_PORT'], os.environ['POSTGRES_DB']))&#10;os.environ.setdefault(&quot;CELERY_BROKER_URL&quot;, os.environ['REDIS_URL'])&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+    <option name="myUseModuleSdk" value="true" />
+    <option name="myModuleName" value="todo" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform)); sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo, NoAppException&#10;for module in [&quot;main.py&quot;, &quot;wsgi.py&quot;, &quot;app.py&quot;]:&#10;    try: locals().update(ScriptInfo(app_import_path=module, create_app=None).load_app().make_shell_context()); print(&quot;\nFlask App: %s&quot; % app.import_name); break&#10;    except NoAppException: pass">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform)); sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo, NoAppException&#10;for module in [&quot;main.py&quot;, &quot;wsgi.py&quot;, &quot;app.py&quot;]:&#10;    try: locals().update(ScriptInfo(app_import_path=module, create_app=None).load_app().make_shell_context()); print(&quot;\nFlask App: %s&quot; % app.import_name); break&#10;    except NoAppException: pass" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;KaranVikas&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/KaranVikas/drf_keycloak.git&quot;,
+    &quot;accountId&quot;: &quot;aaf1bc04-1845-414c-bd99-4ac8ad410d4e&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="32bvZLUtN36sNxM1vF0qIffKzxP" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/karan/work/todo&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\karan\\work\\todo\\frontend\\todo\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\karan\work\todo\compose\local\django" />
+      <recent name="C:\Users\karan\work\todo\compose\local\celery-worker" />
+      <recent name="C:\Users\karan\work\todo\compose\local\flower" />
+      <recent name="C:\Users\karan\work\todo\compose\local\celery-beat" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\karan\work\todo\frontend\todo\src\contexts" />
+      <recent name="C:\Users\karan\work\todo\frontend" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-PY-251.26927.90" />
+        <option value="bundled-python-sdk-41e8cd69c857-64d779b69b7a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.26927.90" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="" />
+      <created>1757702141013</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1757702141013</updated>
+      <workItem from="1757702142393" duration="1675000" />
+      <workItem from="1757940889697" duration="1077000" />
+      <workItem from="1757942091638" duration="3567000" />
+      <workItem from="1758035499398" duration="3124000" />
+      <workItem from="1758047928004" duration="44000" />
+      <workItem from="1758301756350" duration="336000" />
+      <workItem from="1758302124485" duration="20279000" />
+      <workItem from="1758409731176" duration="154000" />
+      <workItem from="1758552382845" duration="164000" />
+      <workItem from="1758552560580" duration="34000" />
+      <workItem from="1758552704702" duration="5201000" />
+      <workItem from="1758567714981" duration="361000" />
+      <workItem from="1758640046071" duration="11683000" />
+      <workItem from="1758658602864" duration="1147000" />
+      <workItem from="1758671215199" duration="21000" />
+      <workItem from="1758672015707" duration="3000" />
+      <workItem from="1758743573732" duration="6181000" />
+      <workItem from="1758750709677" duration="1949000" />
+    </task>
+    <task id="LOCAL-00001" summary="Removed all project-specific and configurational files to clean up the repository.">
+      <option name="closed" value="true" />
+      <created>1758744314135</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1758744314135</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Removed all project-specific and configurational files to clean up the repository." />
+    <MESSAGE value="Added initial project setup files and configurations. Includes environment variables for Django, PostgreSQL, Keycloak, and Redis, along with editor, version control, pre-commit hooks, and templates for frontend and backend." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added initial project setup files and configurations. Includes environment variables for Django, PostgreSQL, Keycloak, and Redis, along with editor, version control, pre-commit hooks, and templates for frontend and backend." />
+  </component>
+</project>

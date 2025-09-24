@@ -1,0 +1,29 @@
+# Django environment variables for local development
+# Loaded by docker-compose.local.yml into django, celery*, flower services
+
+# General
+DJANGO_DEBUG=True
+USE_DOCKER=yes
+DJANGO_ACCOUNT_ALLOW_REGISTRATION=True
+DJANGO_ADMIN_FORCE_ALLAUTH=False
+
+# Secret key (development only)
+DJANGO_SECRET_KEY=dev-secret-key-change-me
+
+# Email
+DJANGO_EMAIL_BACKEND=django.core.mail.backends.smtp.EmailBackend
+EMAIL_HOST=mailpit
+EMAIL_PORT=1025
+
+# Database (also see ./.envs/.local/.postgres)
+# Cookiecutter-Django expects DATABASE_URL in the Django container
+DATABASE_URL=postgres://todo:todo@postgres:5432/todo
+
+# Cache / Celery broker & results
+REDIS_URL=redis://redis:6379/0
+
+# Keycloak (matches compose/local/keycloak realm import)
+KEYCLOAK_REALM=todo
+KEYCLOAK_SERVER=http://keycloak:8080
+KEYCLOAK_CLIENT_ID=todo
+KEYCLOAK_CLIENT_SECRET=dev-secret

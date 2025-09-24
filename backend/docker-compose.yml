@@ -1,0 +1,114 @@
+volumes:
+  todo_local_postgres_data: {}
+  todo_local_postgres_data_backups: {}
+  todo_local_redis_data: {}
+
+networks:
+  appnet: {}   # user-defined bridge network
+
+services:
+  django: &django
+    build:
+      context: .
+      dockerfile: ./compose/local/django/Dockerfile
+    image: todo_local_django
+    container_name: todo_local_django
+    tty: true
+    depends_on:
+      - postgres
+      - redis
+      - mailpit
+      - keycloak
+    volumes:
+      - /app/.venv
+      - .:/app:z
+    env_file:
+      - ./.envs/.local/.django
+      - ./.envs/.local/.postgres
+    ports:
+      - '8000:8000'
+    command: /start
+    networks:
+      - appnet
+
+  postgres:
+    image: postgres:15.10
+    container_name: todo_local_postgres
+    tty: true
+    ports:
+      - '5433:5432'
+    stop_grace_period: "3s"
+    volumes:
+      - todo_local_postgres_data:/var/lib/postgresql/data
+      - ./compose/local/postgres:/backups
+    env_file:
+      - ./.envs/.local/.postgres
+    networks:
+      - appnet
+
+  mailpit:
+    image: docker.io/axllent/mailpit:latest
+    container_name: todo_local_mailpit
+    ports:
+      - "8025:8025"
+    networks:
+      - appnet
+
+  redis:
+    image: docker.io/redis:6
+    container_name: todo_local_redis
+    volumes:
+      - todo_local_redis_data:/data
+    networks:
+      - appnet
+
+  celeryworker:
+    <<: *django
+    image: todo_local_celeryworker
+    container_name: todo_local_celeryworker
+    depends_on:
+      - redis
+      - postgres
+      - mailpit
+    ports: []
+    command: /start-celeryworker
+    networks:
+      - appnet
+
+  celerybeat:
+    <<: *django
+    image: todo_local_celerybeat
+    container_name: todo_local_celerybeat
+    depends_on:
+      - redis
+      - postgres
+      - mailpit
+    ports: []
+    command: /start-celerybeat
+    networks:
+      - appnet
+
+  flower:
+    <<: *django
+    image: todo_local_flower
+    container_name: todo_local_flower
+    ports:
+      - '5555:5555'
+    command: /start-flower
+    networks:
+      - appnet
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:25.0
+    container_name: todo_local_keycloak
+    env_file:
+      - ./.envs/.local/.keycloak
+    command: start-dev --import-realm
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./compose/local/keycloak/realm-export:/opt/keycloak/data/import
+    networks:
+      appnet:
+        aliases:
+          - keycloak   # <-- DNS name Django will use
