@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Added base templates (`base.html`, error pages), and new Django settings for `local`, `test`, and `production` environments. Configured security, email, caching, and Keycloak integration.">
-      <change afterPath="$PROJECT_DIR$/frontend/todo/src/components/AuthButton.tsx.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/todo/src/components/ProtectedRoute.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/todo/src/components/TodoApp.tsx" afterDir="false" />
+    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Add `AuthButton` component for authentication handling in frontend">
+      <change afterPath="$PROJECT_DIR$/frontend/todo/src/services/apiService.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/src/components/ProtectedRoute.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/components/ProtectedRoute.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/src/components/TodoApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/components/TodoApp.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +136,7 @@
       <workItem from="1758671215199" duration="21000" />
       <workItem from="1758672015707" duration="3000" />
       <workItem from="1758743573732" duration="6181000" />
-      <workItem from="1758750709677" duration="4454000" />
+      <workItem from="1758750709677" duration="12547000" />
     </task>
     <task id="LOCAL-00001" summary="Removed all project-specific and configurational files to clean up the repository.">
       <option name="closed" value="true" />
@@ -153,7 +154,23 @@
       <option name="project" value="LOCAL" />
       <updated>1758753852299</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add `ProtectedRoute`, `TodoApp`, and `AuthButton` components to frontend">
+      <option name="closed" value="true" />
+      <created>1758755902122</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1758755902122</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add `AuthButton` component for authentication handling in frontend">
+      <option name="closed" value="true" />
+      <created>1758756721941</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1758756721941</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +204,8 @@
     <MESSAGE value="Added initial project setup files and configurations. Includes environment variables for Django, PostgreSQL, Keycloak, and Redis, along with editor, version control, pre-commit hooks, and templates for frontend and backend." />
     <MESSAGE value="Add foundational project setup with Django templates and configuration files.&#10;&#10;- Included base Django templates (`base.html`, error pages: 403, 404, 500).&#10;- Added project configuration files: `base.py`, `local.py`, `test.py`, `production.py`.&#10;- Introduced `.idea` code style configuration.&#10;- Configured static and media handling with AWS S3 in production settings.&#10;- Established initial middleware, authentication, and app setup." />
     <MESSAGE value="Added base templates (`base.html`, error pages), and new Django settings for `local`, `test`, and `production` environments. Configured security, email, caching, and Keycloak integration." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added base templates (`base.html`, error pages), and new Django settings for `local`, `test`, and `production` environments. Configured security, email, caching, and Keycloak integration." />
+    <MESSAGE value="Add `ProtectedRoute`, `TodoApp`, and `AuthButton` components to frontend" />
+    <MESSAGE value="Add `AuthButton` component for authentication handling in frontend" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add `AuthButton` component for authentication handling in frontend" />
   </component>
 </project>

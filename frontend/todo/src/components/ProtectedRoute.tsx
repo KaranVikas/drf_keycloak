@@ -45,3 +45,5 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children, roles }) => {
     }
   }
 }
+
+export default ProtectedRoute;
