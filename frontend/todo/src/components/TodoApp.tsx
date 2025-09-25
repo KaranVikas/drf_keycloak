@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import {apiService} from '../services/apiService';
-import {useAuth} from '../contexts/AuthContext';
+import {apiService} from '../services/apiService.ts';
+import {useAuth} from '../contexts/AuthContext.tsx';
 
 interface Todo {
   id: string;
@@ -19,7 +19,6 @@ const TodoApp: React.FC = () => {
   useEffect(() => {
     fetchTodos();
   }, []);
-
 
   const fetchTodos = async () => {
     try {
@@ -43,7 +42,7 @@ const TodoApp: React.FC = () => {
       const newTodo = await apiService.createTodo({
         title: newTodoTitle,
         completed: false,
-      })
+      });
       setTodos([...todos, newTodo]);
       setNewTodoTitle('');
     } catch (error) {
@@ -54,12 +53,11 @@ const TodoApp: React.FC = () => {
 
   const handleToggleTodo = async (todo: Todo) => {
     try {
-      const updatedTodo = await apiService.updateTodo.id, {
+      const updatedTodo = await apiService.updateTodo(todo.id, {
         ...todo,
-        completed:
-      !todo.completed,
-    }
-      setTodos(todos.map(t => t.id === toid.id ? updatedTodo : t));
+        completed: !todo.completed,
+    });
+      setTodos(todos.map(t => t.id === todo.id ? updatedTodo : t));
     } catch (error) {
       console.error('Error updating todo:', error);
       setError('Failed to update todo');
@@ -77,7 +75,7 @@ const TodoApp: React.FC = () => {
   };
 
   if (loading) {
-    return <div className={"text-center"}>Loading todos..</div>
+    return <div className="text-center">Loading todos..</div>
   }
   return (
     <div className="max-w-2xl mx-auto">
@@ -153,5 +151,6 @@ const TodoApp: React.FC = () => {
       </div>
     </div>
   );
-
 }
+
+export default TodoApp;

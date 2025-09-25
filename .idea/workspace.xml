@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Add `AuthButton` component for authentication handling in frontend">
-      <change afterPath="$PROJECT_DIR$/frontend/todo/src/services/apiService.tsx" afterDir="false" />
+    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Add `apiService` utility and integrate with `TodoApp` component">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/settings/local.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/settings/local.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/todo/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/src/components/AuthButton.tsx.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/components/AuthButton.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/todo/src/components/ProtectedRoute.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/components/ProtectedRoute.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/todo/src/components/TodoApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/components/TodoApp.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/src/contexts/AuthContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/contexts/AuthContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/src/keylcloak.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/keycloak.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/src/services/apiService.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/services/apiService.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +140,7 @@
       <workItem from="1758671215199" duration="21000" />
       <workItem from="1758672015707" duration="3000" />
       <workItem from="1758743573732" duration="6181000" />
-      <workItem from="1758750709677" duration="12547000" />
+      <workItem from="1758750709677" duration="30458000" />
     </task>
     <task id="LOCAL-00001" summary="Removed all project-specific and configurational files to clean up the repository.">
       <option name="closed" value="true" />
@@ -170,7 +174,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758756721941</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add `apiService` utility and integrate with `TodoApp` component">
+      <option name="closed" value="true" />
+      <created>1758813720100</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1758813720100</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,6 +218,7 @@
     <MESSAGE value="Added base templates (`base.html`, error pages), and new Django settings for `local`, `test`, and `production` environments. Configured security, email, caching, and Keycloak integration." />
     <MESSAGE value="Add `ProtectedRoute`, `TodoApp`, and `AuthButton` components to frontend" />
     <MESSAGE value="Add `AuthButton` component for authentication handling in frontend" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add `AuthButton` component for authentication handling in frontend" />
+    <MESSAGE value="Add `apiService` utility and integrate with `TodoApp` component" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add `apiService` utility and integrate with `TodoApp` component" />
   </component>
 </project>

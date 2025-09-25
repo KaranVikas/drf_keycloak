@@ -6,6 +6,6 @@ const keycloakConfig = {
     clientId: 'todo-react',
 };
 
-const keycloak = new KeyCloak(keycloakConfig);
+const keycloak = new Keycloak(keycloakConfig);
 
 export default keycloak;

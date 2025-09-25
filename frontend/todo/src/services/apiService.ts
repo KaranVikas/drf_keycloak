@@ -1,6 +1,6 @@
 import keycloak from '../keycloak'
 
-const API_BASE_URL: 'http://localhost:8000/api'
+const API_BASE_URL = 'http://localhost:8000/api'
 
 interface ApiRequestOptions {
   method?: string;
@@ -21,7 +21,7 @@ class ApiService {
   }
 
   private async request<T>(endpoint: string, options: ApiRequestOptions = {}): Promise<T> {
-    const url:  `${API_BASE_URL}${endpoint}`
+    const url = `${API_BASE_URL}${endpoint}`
 
     const config: RequestInit = {
       method: options.method || 'GET',
@@ -32,7 +32,7 @@ class ApiService {
     };
 
     if(options.body){
-      config.body = JSON.stringfy(options.body);
+      config.body = JSON.stringify(options.body);
     }
 
     try{
@@ -64,7 +64,7 @@ class ApiService {
         throw new Error(`HTTP error! status: ${response.status}`)
       }
 
-      return await reponse.json();
+      return await response.json();
     } catch(error) {
       console.error(`API request failed: ${url}`, error);
       throw error;

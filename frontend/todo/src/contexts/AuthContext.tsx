@@ -1,5 +1,5 @@
-import React , {createContext, useContext, useEffect, useState, ReactNode }
-import keycloak from '../keycloak.ts';
+import React, {createContext, useContext, useEffect, useState, ReactNode } from 'react'
+import keycloak from '../keycloak';
 
 interface AuthContextType {
   authenticated: boolean;
@@ -21,7 +21,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [authenticated, setAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
   const [token, setToken] = useState<string | null>(null);
-  const [user, setUser] = useState<any>(null)
+  const [user, setUser] = useState<any>(null);
 
   useEffect(() => {
     const initKeycloak = async () => {
