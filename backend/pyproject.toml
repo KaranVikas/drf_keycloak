@@ -191,4 +191,10 @@ dependencies = [
     "redis==6.4.0",
     "PyJWT==2.10.1",
     "cryptography==43.0.1",
+    "django-cors-headers==4.8.0",  # Already present ✅
+    "requests==2.32.3",            # For Keycloak integration
+    "requests-oauthlib==2.0.0",
+    "django-oauth-toolkit==3.0.1",
+
+
 ]

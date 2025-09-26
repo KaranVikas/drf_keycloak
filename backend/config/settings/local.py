@@ -65,8 +65,6 @@ if env("USE_DOCKER") == "yes":
 # https://django-extensions.readthedocs.io/en/latest/installation_instructions.html#configuration
 INSTALLED_APPS += ["django_extensions",
                    'oauth2_provider',
-                   'corsheaders',
-                   'todo.authentication'
                    ]
 # Celery
 # ------------------------------------------------------------------------------
@@ -84,52 +82,10 @@ KEYCLOAK_ISSUER = f"{KEYCLOAK_SERVER}/realms/{KEYCLOAK_REALM}"
 KEYCLOAK_CLIENT_ID = env("KEYCLOAK_CLIENT_ID", default="todo")
 KEYCLOAK_CLIENT_SECRET = env("KEYCLOAK_CLIENT_SECRET", default="dev-secret")
 
-SOCIALACCOUNT_PROVIDERS = {
-    "openid_connect": {
-        # Optional (enable if your IdP requires PKCE)
-        "OAUTH_PKCE_ENABLED": True,
-
-        "APPS": [
-            {
-                # This becomes the {provider_id} in the callback URL
-                "provider_id": "keycloak",
-                "name": "Keycloak",
-                "client_id": KEYCLOAK_CLIENT_ID,
-                "secret": KEYCLOAK_CLIENT_SECRET,
-
-                "settings": {
-                    # Prefer the issuer (allauth derives the .well-known URL),
-                    # or set the well-known URL explicitly (see note below).
-                    "server_url": KEYCLOAK_ISSUER,
-                    # "server_url": f"{KEYCLOAK_ISSUER}/.well-known/openid-configuration",
-
-                    # If your Keycloak token endpoint requires a specific method:
-                    # "token_auth_method": "client_secret_post",
-                },
-            }
-        ],
-    }
-}
-
-
-# Add to MIDDLEWARE
-MIDDLEWARE += [
-  'todo.authentication.middleware.KeycloakAuthenticationMiddleware',
-  'corsheaders.middleware.CorsMiddleware',
-  # ... your existing middleware
-  'oauth2_provider.middleware.OAuth2TokenMiddleware',
-]
-
 # CORS settings for React frontend
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",  # Vite dev server
-    "http://127.0.0.1:5173",
+  "http://localhost:3000",  # React dev server
+  "http://127.0.0.1:3000",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
-
-# Add custom authentication backend
-AUTHENTICATION_BACKENDS = [
-  'todo.authentication.backends.KeycloakBackend',
-  'django.contrib.auth.backends.ModelBackend'
-]

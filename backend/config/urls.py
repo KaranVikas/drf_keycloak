@@ -39,9 +39,9 @@ urlpatterns += [
         SpectacularSwaggerView.as_view(url_name="api-schema"),
         name="api-docs",
     ),
-  # keycloak patterns
-  path('api/auth/', include('todo.authentication.urls')),
-  path('api/todos/', include('todo.todos.urls')),
+
+
+
 ]
 
 if settings.DEBUG:

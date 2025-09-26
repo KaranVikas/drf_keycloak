@@ -4,9 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Integrate Keycloak authentication middleware and backend; update CORS and authentication settings.">
+    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Update Keycloak server URL to use localhost in local environment configuration">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.envs/.local/.django" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.envs/.local/.django" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/compose/local/keycloak/realm-export/todo-realm.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/compose/local/keycloak/realm-export/todo-realm.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/settings/local.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/settings/local.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/authentication/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/authentication/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/authentication/backends.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/authentication/middleware.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/authentication/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/authentication/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/todos/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/todos/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/todos/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/todos/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/todos/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/src/keycloak.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/keycloak.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +153,8 @@
       <workItem from="1758672015707" duration="3000" />
       <workItem from="1758743573732" duration="6181000" />
       <workItem from="1758750709677" duration="40835000" />
-      <workItem from="1758848175984" duration="3332000" />
+      <workItem from="1758848175984" duration="11118000" />
+      <workItem from="1758897257079" duration="9464000" />
     </task>
     <task id="LOCAL-00001" summary="Removed all project-specific and configurational files to clean up the repository.">
       <option name="closed" value="true" />
@@ -211,7 +228,31 @@
       <option name="project" value="LOCAL" />
       <updated>1758850842769</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Integrate Keycloak authentication middleware and backend; update CORS and authentication settings.">
+      <option name="closed" value="true" />
+      <created>1758851637812</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1758851637812</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Update Keycloak URL in configuration file">
+      <option name="closed" value="true" />
+      <created>1758855532309</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1758855532309</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Update Keycloak server URL to use localhost in local environment configuration">
+      <option name="closed" value="true" />
+      <created>1758861829851</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1758861829851</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,6 +292,8 @@
     <MESSAGE value="Fix file imports, typos, and CORS settings; integrate `TodoApp` with apiService" />
     <MESSAGE value="Add authentication and todos APIs; update `.editorconfig` and increase consistency" />
     <MESSAGE value="Integrate Keycloak authentication middleware and backend; update CORS and authentication settings." />
-    <option name="LAST_COMMIT_MESSAGE" value="Integrate Keycloak authentication middleware and backend; update CORS and authentication settings." />
+    <MESSAGE value="Update Keycloak URL in configuration file" />
+    <MESSAGE value="Update Keycloak server URL to use localhost in local environment configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Keycloak server URL to use localhost in local environment configuration" />
   </component>
 </project>
