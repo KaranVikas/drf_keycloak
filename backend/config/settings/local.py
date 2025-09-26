@@ -113,7 +113,8 @@ SOCIALACCOUNT_PROVIDERS = {
 
 
 # Add to MIDDLEWARE
-MIDDLEWARE = [
+MIDDLEWARE += [
+  'todo.authentication.middleware.KeycloakAuthenticationMiddleware',
   'corsheaders.middleware.CorsMiddleware',
   # ... your existing middleware
   'oauth2_provider.middleware.OAuth2TokenMiddleware',
@@ -126,3 +127,9 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 CORS_ALLOW_CREDENTIALS = True
+
+# Add custom authentication backend
+AUTHENTICATION_BACKENDS = [
+  'todo.authentication.backends.KeycloakBackend',
+  'django.contrib.auth.backends.ModelBackend'
+]
