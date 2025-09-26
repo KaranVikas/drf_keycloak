@@ -74,18 +74,12 @@ CELERY_TASK_EAGER_PROPAGATES = True
 # Your stuff...
 # ------------------------------------------------------------------------------
 
-# Configure Keycloak as an OIDC server for allauth
-# You can override these with environment variables in ./.envs/.local/.django
-KEYCLOAK_REALM = env("KEYCLOAK_REALM", default="todo")
-KEYCLOAK_SERVER = env("KEYCLOAK_SERVER", default="http://keycloak:8080")
-KEYCLOAK_ISSUER = f"{KEYCLOAK_SERVER}/realms/{KEYCLOAK_REALM}"
-KEYCLOAK_CLIENT_ID = env("KEYCLOAK_CLIENT_ID", default="todo")
-KEYCLOAK_CLIENT_SECRET = env("KEYCLOAK_CLIENT_SECRET", default="dev-secret")
+
 
 # CORS settings for React frontend
 CORS_ALLOWED_ORIGINS = [
-  "http://localhost:3000",  # React dev server
-  "http://127.0.0.1:3000",
+  "http://localhost:5173",  # React dev server
+  "http://127.0.0.1:5173",
 ]
 
-CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_CREDENTIALS = False

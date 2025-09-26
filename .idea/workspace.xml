@@ -4,25 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Update Keycloak server URL to use localhost in local environment configuration">
+    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Remove `.idea` project files from version control">
+      <change afterPath="$PROJECT_DIR$/backend/todo/auth_keycloak/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/auth_keycloak/authentication.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/auth_keycloak/jwks.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.envs/.local/.django" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.envs/.local/.django" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/compose/local/keycloak/realm-export/todo-realm.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/compose/local/keycloak/realm-export/todo-realm.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/settings/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/config/settings/local.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/settings/local.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/authentication/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/authentication/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/authentication/backends.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/authentication/middleware.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/authentication/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/authentication/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/todos/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/todos/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/todos/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/todos/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/todos/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/todo/src/keycloak.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/keycloak.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,28 +74,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/karan/work/todo&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\karan\\work\\todo\\frontend\\todo\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "keycloak",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "C:/Users/karan/work/todo",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "to.speed.mode.migration.done": "true",
+    "ts.external.directory.path": "C:\\Users\\karan\\work\\todo\\frontend\\todo\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\karan\work\todo\compose\local\django" />
@@ -154,7 +142,7 @@
       <workItem from="1758743573732" duration="6181000" />
       <workItem from="1758750709677" duration="40835000" />
       <workItem from="1758848175984" duration="11118000" />
-      <workItem from="1758897257079" duration="9464000" />
+      <workItem from="1758897257079" duration="11685000" />
     </task>
     <task id="LOCAL-00001" summary="Removed all project-specific and configurational files to clean up the repository.">
       <option name="closed" value="true" />
@@ -252,7 +240,23 @@
       <option name="project" value="LOCAL" />
       <updated>1758861829851</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Remove deprecated authentication and todos modules; clean up Keycloak integration and related settings.">
+      <option name="closed" value="true" />
+      <created>1758911858658</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1758911858658</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Remove `.idea` project files from version control">
+      <option name="closed" value="true" />
+      <created>1758911895460</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1758911895460</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,6 +298,8 @@
     <MESSAGE value="Integrate Keycloak authentication middleware and backend; update CORS and authentication settings." />
     <MESSAGE value="Update Keycloak URL in configuration file" />
     <MESSAGE value="Update Keycloak server URL to use localhost in local environment configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Keycloak server URL to use localhost in local environment configuration" />
+    <MESSAGE value="Remove deprecated authentication and todos modules; clean up Keycloak integration and related settings." />
+    <MESSAGE value="Remove `.idea` project files from version control" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove `.idea` project files from version control" />
   </component>
 </project>

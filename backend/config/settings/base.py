@@ -1,6 +1,7 @@
 # ruff: noqa: ERA001, E501
 """Base settings to build other settings files upon."""
 
+import os
 import ssl
 from pathlib import Path
 
@@ -331,6 +332,7 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework.authentication.SessionAuthentication",
         "rest_framework.authentication.TokenAuthentication",
+        "apps.auth_keycloak.authentication.KeycloakJWTAuthentication",
     ),
     "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
@@ -350,3 +352,12 @@ SPECTACULAR_SETTINGS = {
 }
 # Your stuff...
 # ------------------------------------------------------------------------------
+
+# Configure Keycloak as an OIDC server for allauth
+# You can override these with environment variables in ./.envs/.local/.django
+KEYCLOAK_REALM = env("KEYCLOAK_REALM", default="todo")
+KEYCLOAK_SERVER = env("KEYCLOAK_SERVER", default="http://keycloak:8080")
+KEYCLOAK_ISSUER = f"{KEYCLOAK_SERVER}/realms/{KEYCLOAK_REALM}"
+KEYCLOAK_CLIENT_ID = env("KEYCLOAK_CLIENT_ID", default="todo")
+KEYCLOAK_CLIENT_SECRET = env("KEYCLOAK_CLIENT_SECRET", default="dev-secret")
+KEYCLOAK_LEEWAY = env("KEYCLOAK_LEEWAY", "60")
