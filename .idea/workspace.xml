@@ -4,13 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Remove `.idea` project files from version control">
-      <change afterPath="$PROJECT_DIR$/backend/todo/auth_keycloak/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/todo/auth_keycloak/authentication.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/todo/auth_keycloak/jwks.py" afterDir="false" />
+    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Add Keycloak integration with authentication middleware and JWKS caching; update CORS settings">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.envs/.local/.django" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.envs/.local/.django" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/config/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/settings/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config/settings/local.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/settings/local.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/alert.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/alert.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/badge.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/badge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/button.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/button.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/field.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/field.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/panel.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/panel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/table.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/table.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/users/adapters.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/users/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/users/context_processors.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/users/forms.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/users/tests/test_admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/users/tests/test_forms.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/users/tests/test_views.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +94,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
     "git-widget-placeholder": "keycloak",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
@@ -142,7 +156,7 @@
       <workItem from="1758743573732" duration="6181000" />
       <workItem from="1758750709677" duration="40835000" />
       <workItem from="1758848175984" duration="11118000" />
-      <workItem from="1758897257079" duration="11685000" />
+      <workItem from="1758897257079" duration="13122000" />
     </task>
     <task id="LOCAL-00001" summary="Removed all project-specific and configurational files to clean up the repository.">
       <option name="closed" value="true" />
@@ -256,7 +270,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758911895460</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Add Keycloak integration with authentication middleware and JWKS caching; update CORS settings">
+      <option name="closed" value="true" />
+      <created>1758915127641</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1758915127641</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,6 +322,7 @@
     <MESSAGE value="Update Keycloak server URL to use localhost in local environment configuration" />
     <MESSAGE value="Remove deprecated authentication and todos modules; clean up Keycloak integration and related settings." />
     <MESSAGE value="Remove `.idea` project files from version control" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove `.idea` project files from version control" />
+    <MESSAGE value="Add Keycloak integration with authentication middleware and JWKS caching; update CORS settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Keycloak integration with authentication middleware and JWKS caching; update CORS settings" />
   </component>
 </project>

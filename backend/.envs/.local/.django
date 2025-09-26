@@ -5,7 +5,6 @@
 DJANGO_DEBUG=True
 USE_DOCKER=yes
 DJANGO_ACCOUNT_ALLOW_REGISTRATION=True
-DJANGO_ADMIN_FORCE_ALLAUTH=False
 
 # Secret key (development only)
 DJANGO_SECRET_KEY=dev-secret-key-change-me
