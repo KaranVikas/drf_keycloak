@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Fix file imports, typos, and CORS settings; integrate `TodoApp` with apiService">
+    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Integrate Keycloak authentication middleware and backend; update CORS and authentication settings.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/authentication/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/authentication/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/todos/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/todos/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/todos/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/todos/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +137,7 @@
       <workItem from="1758672015707" duration="3000" />
       <workItem from="1758743573732" duration="6181000" />
       <workItem from="1758750709677" duration="40835000" />
-      <workItem from="1758848175984" duration="1860000" />
+      <workItem from="1758848175984" duration="3332000" />
     </task>
     <task id="LOCAL-00001" summary="Removed all project-specific and configurational files to clean up the repository.">
       <option name="closed" value="true" />
@@ -198,7 +195,23 @@
       <option name="project" value="LOCAL" />
       <updated>1758848224942</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add authentication and todos APIs; update `.editorconfig` and increase consistency">
+      <option name="closed" value="true" />
+      <created>1758850583039</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1758850583041</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Integrate Keycloak authentication middleware and backend; update CORS and authentication settings.">
+      <option name="closed" value="true" />
+      <created>1758850842769</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1758850842769</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,6 +249,8 @@
     <MESSAGE value="Add `AuthButton` component for authentication handling in frontend" />
     <MESSAGE value="Add `apiService` utility and integrate with `TodoApp` component" />
     <MESSAGE value="Fix file imports, typos, and CORS settings; integrate `TodoApp` with apiService" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix file imports, typos, and CORS settings; integrate `TodoApp` with apiService" />
+    <MESSAGE value="Add authentication and todos APIs; update `.editorconfig` and increase consistency" />
+    <MESSAGE value="Integrate Keycloak authentication middleware and backend; update CORS and authentication settings." />
+    <option name="LAST_COMMIT_MESSAGE" value="Integrate Keycloak authentication middleware and backend; update CORS and authentication settings." />
   </component>
 </project>
