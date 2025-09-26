@@ -4,26 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Add Keycloak integration with authentication middleware and JWKS caching; update CORS settings">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.envs/.local/.django" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.envs/.local/.django" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/settings/base.py" afterDir="false" />
+    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Remove allauth integration and related configurations, templates, and tests; clean up project dependencies and settings">
       <change beforePath="$PROJECT_DIR$/backend/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/alert.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/alert.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/badge.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/badge.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/button.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/button.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/field.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/field.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/panel.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/panel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/table.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/table.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/users/adapters.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/users/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/users/context_processors.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/users/forms.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/users/tests/test_admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/users/tests/test_forms.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/users/tests/test_views.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +86,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "settings.editor.selected.configurable": "com.intellij.pycharm.community.ide.impl.configuration.PythonContentEntriesConfigurable",
     "to.speed.mode.migration.done": "true",
     "ts.external.directory.path": "C:\\Users\\karan\\work\\todo\\frontend\\todo\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
@@ -156,7 +138,7 @@
       <workItem from="1758743573732" duration="6181000" />
       <workItem from="1758750709677" duration="40835000" />
       <workItem from="1758848175984" duration="11118000" />
-      <workItem from="1758897257079" duration="13122000" />
+      <workItem from="1758897257079" duration="13480000" />
     </task>
     <task id="LOCAL-00001" summary="Removed all project-specific and configurational files to clean up the repository.">
       <option name="closed" value="true" />
@@ -278,7 +260,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758915127641</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Remove allauth integration and related configurations, templates, and tests; clean up project dependencies and settings">
+      <option name="closed" value="true" />
+      <created>1758916582478</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1758916582479</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,6 +313,7 @@
     <MESSAGE value="Remove deprecated authentication and todos modules; clean up Keycloak integration and related settings." />
     <MESSAGE value="Remove `.idea` project files from version control" />
     <MESSAGE value="Add Keycloak integration with authentication middleware and JWKS caching; update CORS settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Keycloak integration with authentication middleware and JWKS caching; update CORS settings" />
+    <MESSAGE value="Remove allauth integration and related configurations, templates, and tests; clean up project dependencies and settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove allauth integration and related configurations, templates, and tests; clean up project dependencies and settings" />
   </component>
 </project>

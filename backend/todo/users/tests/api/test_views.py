@@ -1,7 +1,7 @@
 import pytest
 from rest_framework.test import APIRequestFactory
 
-from todo.users.api.views import UserViewSet
+from todo.users.views import UserViewSet
 from todo.users.models import User
 
 
