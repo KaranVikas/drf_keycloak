@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Add `apiService` utility and integrate with `TodoApp` component">
+    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Fix file imports, typos, and CORS settings; integrate `TodoApp` with apiService">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config/settings/local.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/settings/local.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/todo/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/todo/src/components/AuthButton.tsx.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/components/AuthButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/todo/src/components/ProtectedRoute.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/components/ProtectedRoute.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/todo/src/components/TodoApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/components/TodoApp.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/todo/src/contexts/AuthContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/contexts/AuthContext.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/todo/src/keylcloak.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/keycloak.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/todo/src/services/apiService.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/services/apiService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/authentication/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/authentication/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/todos/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/todos/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/todos/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/todos/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +20,9 @@
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;import os&#10;os.environ.setdefault(&quot;DATABASE_URL&quot;,&quot;postgres://{}:{}@{}:{}/{}&quot;.format(os.environ['POSTGRES_USER'], os.environ['POSTGRES_PASSWORD'], os.environ['POSTGRES_HOST'], os.environ['POSTGRES_PORT'], os.environ['POSTGRES_DB']))&#10;os.environ.setdefault(&quot;CELERY_BROKER_URL&quot;, os.environ['REDIS_URL'])&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
     <option name="myUseModuleSdk" value="true" />
     <option name="myModuleName" value="todo" />
+  </component>
+  <component name="EditorConfigPreviewManager">
+    <editorConfig file="$PROJECT_DIR$/backend/.editorconfig" previewFile="$PROJECT_DIR$/backend/todo/authentication/middleware.py" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -74,28 +73,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/karan/work/todo",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "to.speed.mode.migration.done": "true",
-    "ts.external.directory.path": "C:\\Users\\karan\\work\\todo\\frontend\\todo\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/karan/work/todo&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\karan\\work\\todo\\frontend\\todo\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\karan\work\todo\compose\local\django" />
@@ -140,7 +139,8 @@
       <workItem from="1758671215199" duration="21000" />
       <workItem from="1758672015707" duration="3000" />
       <workItem from="1758743573732" duration="6181000" />
-      <workItem from="1758750709677" duration="30458000" />
+      <workItem from="1758750709677" duration="40835000" />
+      <workItem from="1758848175984" duration="1860000" />
     </task>
     <task id="LOCAL-00001" summary="Removed all project-specific and configurational files to clean up the repository.">
       <option name="closed" value="true" />
@@ -182,7 +182,23 @@
       <option name="project" value="LOCAL" />
       <updated>1758813720100</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fix file imports, typos, and CORS settings; integrate `TodoApp` with apiService">
+      <option name="closed" value="true" />
+      <created>1758836979168</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1758836979168</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Fix file imports, typos, and CORS settings; integrate `TodoApp` with apiService">
+      <option name="closed" value="true" />
+      <created>1758848224942</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1758848224942</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,6 +235,7 @@
     <MESSAGE value="Add `ProtectedRoute`, `TodoApp`, and `AuthButton` components to frontend" />
     <MESSAGE value="Add `AuthButton` component for authentication handling in frontend" />
     <MESSAGE value="Add `apiService` utility and integrate with `TodoApp` component" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add `apiService` utility and integrate with `TodoApp` component" />
+    <MESSAGE value="Fix file imports, typos, and CORS settings; integrate `TodoApp` with apiService" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix file imports, typos, and CORS settings; integrate `TodoApp` with apiService" />
   </component>
 </project>

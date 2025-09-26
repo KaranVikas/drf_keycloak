@@ -66,6 +66,7 @@ if env("USE_DOCKER") == "yes":
 INSTALLED_APPS += ["django_extensions",
                    'oauth2_provider',
                    'corsheaders',
+                   'todo.authentication'
                    ]
 # Celery
 # ------------------------------------------------------------------------------

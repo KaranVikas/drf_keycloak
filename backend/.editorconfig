@@ -10,7 +10,7 @@ trim_trailing_whitespace = true
 
 [*.{py,rst,ini}]
 indent_style = space
-indent_size = 4
+indent_size = 2
 
 [*.{html,css,scss,json,yml,xml,toml}]
 indent_style = space
