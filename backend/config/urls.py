@@ -31,7 +31,6 @@ urlpatterns += [
         name="api-docs",
     ),
 
-
 ]
 
 if settings.DEBUG:

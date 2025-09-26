@@ -4,8 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Remove allauth integration and related configurations, templates, and tests; clean up project dependencies and settings">
+    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Remove users API and URLs; migrate views to unified users viewset configuration">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/templates/403.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/templates/403.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/templates/403_csrf.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/templates/403_csrf.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/templates/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/templates/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/templates/500.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/templates/500.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/templates/account/base_manage_password.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/alert.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/badge.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/button.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/field.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/fields.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/panel.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/table.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/templates/allauth/layouts/entrance.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/templates/allauth/layouts/manage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/templates/base.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/templates/pages/about.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/templates/pages/home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/templates/users/user_detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/templates/users/user_form.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +97,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
     "git-widget-placeholder": "keycloak",
     "ignore.virus.scanning.warn.message": "true",
@@ -90,6 +112,11 @@
     "to.speed.mode.migration.done": "true",
     "ts.external.directory.path": "C:\\Users\\karan\\work\\todo\\frontend\\todo\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -100,6 +127,7 @@
       <recent name="C:\Users\karan\work\todo\compose\local\celery-beat" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\karan\work\todo\backend\todo\users" />
       <recent name="C:\Users\karan\work\todo\frontend\todo\src\contexts" />
       <recent name="C:\Users\karan\work\todo\frontend" />
     </key>
@@ -138,7 +166,7 @@
       <workItem from="1758743573732" duration="6181000" />
       <workItem from="1758750709677" duration="40835000" />
       <workItem from="1758848175984" duration="11118000" />
-      <workItem from="1758897257079" duration="13480000" />
+      <workItem from="1758897257079" duration="15108000" />
     </task>
     <task id="LOCAL-00001" summary="Removed all project-specific and configurational files to clean up the repository.">
       <option name="closed" value="true" />
@@ -268,7 +296,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758916582479</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Remove users API and URLs; migrate views to unified users viewset configuration">
+      <option name="closed" value="true" />
+      <created>1758917119395</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1758917119395</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,6 +350,7 @@
     <MESSAGE value="Remove `.idea` project files from version control" />
     <MESSAGE value="Add Keycloak integration with authentication middleware and JWKS caching; update CORS settings" />
     <MESSAGE value="Remove allauth integration and related configurations, templates, and tests; clean up project dependencies and settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove allauth integration and related configurations, templates, and tests; clean up project dependencies and settings" />
+    <MESSAGE value="Remove users API and URLs; migrate views to unified users viewset configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove users API and URLs; migrate views to unified users viewset configuration" />
   </component>
 </project>
