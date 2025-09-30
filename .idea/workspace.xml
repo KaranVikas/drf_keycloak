@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Integrate Keycloak authentication across frontend and backend, streamline token handling, and improve user service logic.">
-      <change afterPath="$PROJECT_DIR$/backend/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/todo/todos/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/todo/todos/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/todo/todos/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/todo/todos/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/todo/todos/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/todo/todos/views.py" afterDir="false" />
+    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Fix typos in `views.py` and correct model serializer definition in `serializers.py`.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config/api_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/api_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/settings/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/users/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/users/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/todos/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/todos/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/todos/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/todos/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/todos/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/todos/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/todos/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/todos/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +156,7 @@
       <workItem from="1758943287926" duration="3270000" />
       <workItem from="1758993535873" duration="6473000" />
       <workItem from="1759080407809" duration="10420000" />
-      <workItem from="1759169826910" duration="29667000" />
+      <workItem from="1759169826910" duration="32730000" />
     </task>
     <task id="LOCAL-00001" summary="Removed all project-specific and configurational files to clean up the repository.">
       <option name="closed" value="true" />
@@ -324,7 +318,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759193764742</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Add Todo app with CRUD functionality and integrate it into the API router.">
+      <option name="closed" value="true" />
+      <created>1759267351739</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1759267351739</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,6 +376,8 @@
     <MESSAGE value="Remove allauth templates, configurations, and related files; clean up project dependencies" />
     <MESSAGE value="Remove redundant `logoutUris` from Keycloak realm configuration" />
     <MESSAGE value="Integrate Keycloak authentication across frontend and backend, streamline token handling, and improve user service logic." />
-    <option name="LAST_COMMIT_MESSAGE" value="Integrate Keycloak authentication across frontend and backend, streamline token handling, and improve user service logic." />
+    <MESSAGE value="Add Todo app with CRUD functionality and integrate it into the API router." />
+    <MESSAGE value="Fix typos in `views.py` and correct model serializer definition in `serializers.py`." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix typos in `views.py` and correct model serializer definition in `serializers.py`." />
   </component>
 </project>

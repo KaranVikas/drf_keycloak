@@ -4,7 +4,7 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticated
 from django.shortcuts import get_object_or_404
 
-from tood.auth_keycloak.authentication import KeycloakJWTAuthentication
+from todo.auth_keycloak.authentication import KeycloakJWTAuthentication
 from .models import Todo
 from .serializers import TodoSerializer, TodoCreateSerializer
 
@@ -18,7 +18,7 @@ class TodoViewSet(ModelViewSet):
 
   """
 
-  authenticated_classes = [KeycloakJWTAuthentication]
+  authentication_classes = [KeycloakJWTAuthentication]
   permission_classes = [IsAuthenticated]
 
   def get_queryset(self):
@@ -54,7 +54,7 @@ class TodoViewSet(ModelViewSet):
 
     return Response(serializer.data)
 
-  def delete(self, request, *args, **kwargs):
+  def destory(self, request, *args, **kwargs):
     todo = get_object_or_404(Todo, id=kwargs['pk'], user_sub = request.user.id)
     todo.delete()
     return Response(status=status.HTTP_204_NO_CONTENT)

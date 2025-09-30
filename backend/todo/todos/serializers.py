@@ -30,7 +30,7 @@ class TodoCreateSerializer(serializers.ModelSerializer):
   """ Simplifies serializer for creating todos """
 
   class Meta:
-    model: Todo
+    model = Todo
     fields = ['title','description']
 
   def validate_title(self, value):
