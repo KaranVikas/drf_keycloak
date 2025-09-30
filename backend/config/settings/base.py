@@ -305,9 +305,10 @@ CELERY_WORKER_HIJACK_ROOT_LOGGER = False
 # django-rest-framework - https://www.django-rest-framework.org/api-guide/settings/
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
+        "todo.auth_keycloak.authentication.KeycloakJWTAuthentication",
         "rest_framework.authentication.SessionAuthentication",
         "rest_framework.authentication.TokenAuthentication",
-        "todo.auth_keycloak.authentication.KeycloakJWTAuthentication",
+
     ),
     "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
@@ -328,10 +329,21 @@ SPECTACULAR_SETTINGS = {
 # Your stuff...
 # ------------------------------------------------------------------------------
 
-# You can override these with environment variables in ./.envs/.local/.django
+# Keycloak Configuration
+# ------------------------------------------------------------------------------
 KEYCLOAK_REALM = env.str("KEYCLOAK_REALM", default="todo")
 KEYCLOAK_SERVER = env.str("KEYCLOAK_SERVER", default="http://keycloak:8080")
-KEYCLOAK_ISSUER = f"{KEYCLOAK_SERVER}/realms/{KEYCLOAK_REALM}"
 KEYCLOAK_CLIENT_ID = env.str("KEYCLOAK_CLIENT_ID", default="todo")
 KEYCLOAK_CLIENT_SECRET = env.str("KEYCLOAK_CLIENT_SECRET", default="dev-secret")
-KEYCLOAK_LEEWAY = env.str("KEYCLOAK_LEEWAY", "60")
+KEYCLOAK_LEEWAY = env.int("KEYCLOAK_LEEWAY", default=60)
+KEYCLOAK_AUDIENCE = env.str("KEYCLOAK_AUDIENCE", default="todo")
+
+# Use environment variables directly - don't override them
+KEYCLOAK_JWKS_URL = env.str("KEYCLOAK_JWKS_URL", default=f"{KEYCLOAK_SERVER}/realms/{KEYCLOAK_REALM}/protocol/openid-connect/certs")
+KEYCLOAK_ISSUER = env.str("KEYCLOAK_ISSUER", default=f"http://localhost:8080/realms/{KEYCLOAK_REALM}")
+
+
+#
+# # Add these missing Keycloak settings:
+# KEYCLOAK_ISSUER = env.str("KEYCLOAK_ISSUER", default="http://localhost:8080/realms/todo")
+# KEYCLOAK_JWKS_URL = env.str("KEYCLOAK_JWKS_URL",default="http://keycloak:8080/realms/todo/protocol/openid-connect/certs")

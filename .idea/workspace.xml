@@ -4,29 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Remove users API and URLs; migrate views to unified users viewset configuration">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Remove redundant `logoutUris` from Keycloak realm configuration">
+      <change afterPath="$PROJECT_DIR$/frontend/todo/src/services/api.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/todo/src/services/userService.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/templates/403.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/templates/403.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/templates/403_csrf.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/templates/403_csrf.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/templates/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/templates/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/templates/500.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/templates/500.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/templates/account/base_manage_password.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/alert.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/badge.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/button.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/field.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/fields.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/panel.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/templates/allauth/elements/table.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/templates/allauth/layouts/entrance.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/templates/allauth/layouts/manage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/templates/base.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/templates/pages/about.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/templates/pages/home.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/templates/users/user_detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/templates/users/user_form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.envs/.local/.django" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.envs/.local/.django" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/compose/local/keycloak/realm-export/todo-realm.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/compose/local/keycloak/realm-export/todo-realm.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/settings/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/auth_keycloak/authentication.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/auth_keycloak/authentication.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/src/components/AuthButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/components/AuthButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/src/components/ProtectedRoute.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/components/ProtectedRoute.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/src/components/TodoApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/components/TodoApp.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/src/contexts/AuthContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/contexts/AuthContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/src/services/apiService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/services/apiService.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,35 +85,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
-    "git-widget-placeholder": "keycloak",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/karan/work/todo",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.intellij.pycharm.community.ide.impl.configuration.PythonContentEntriesConfigurable",
-    "to.speed.mode.migration.done": "true",
-    "ts.external.directory.path": "C:\\Users\\karan\\work\\todo\\frontend\\todo\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR_AND_PREVIEW&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;keycloak&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/karan/work/todo&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.pycharm.community.ide.impl.configuration.PythonContentEntriesConfigurable&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\karan\\work\\todo\\frontend\\todo\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\karan\work\todo\compose\local\django" />
@@ -166,7 +161,13 @@
       <workItem from="1758743573732" duration="6181000" />
       <workItem from="1758750709677" duration="40835000" />
       <workItem from="1758848175984" duration="11118000" />
-      <workItem from="1758897257079" duration="15108000" />
+      <workItem from="1758897257079" duration="16302000" />
+      <workItem from="1758926227069" duration="13855000" />
+      <workItem from="1758940365431" duration="1316000" />
+      <workItem from="1758943287926" duration="3270000" />
+      <workItem from="1758993535873" duration="6473000" />
+      <workItem from="1759080407809" duration="10420000" />
+      <workItem from="1759169826910" duration="14076000" />
     </task>
     <task id="LOCAL-00001" summary="Removed all project-specific and configurational files to clean up the repository.">
       <option name="closed" value="true" />
@@ -304,7 +305,23 @@
       <option name="project" value="LOCAL" />
       <updated>1758917119395</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Remove allauth templates, configurations, and related files; clean up project dependencies">
+      <option name="closed" value="true" />
+      <created>1758918702479</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1758918702479</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Remove redundant `logoutUris` from Keycloak realm configuration">
+      <option name="closed" value="true" />
+      <created>1758933481583</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1758933481583</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,6 +368,8 @@
     <MESSAGE value="Add Keycloak integration with authentication middleware and JWKS caching; update CORS settings" />
     <MESSAGE value="Remove allauth integration and related configurations, templates, and tests; clean up project dependencies and settings" />
     <MESSAGE value="Remove users API and URLs; migrate views to unified users viewset configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove users API and URLs; migrate views to unified users viewset configuration" />
+    <MESSAGE value="Remove allauth templates, configurations, and related files; clean up project dependencies" />
+    <MESSAGE value="Remove redundant `logoutUris` from Keycloak realm configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove redundant `logoutUris` from Keycloak realm configuration" />
   </component>
 </project>

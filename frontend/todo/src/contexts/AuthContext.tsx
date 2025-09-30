@@ -8,7 +8,6 @@ interface AuthContextType {
   user: any | null;
   login: () => void;
   logout: () => void;
-  hasRole: (role: string) => boolean;
 }
 
 const AuthContext = createContext<AuthContextType | null>(null);
@@ -16,6 +15,7 @@ const AuthContext = createContext<AuthContextType | null>(null);
 interface AuthProviderProps {
   children: ReactNode;
 }
+
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [authenticated, setAuthenticated] = useState(false);
@@ -29,14 +29,20 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         const authenticated = await keycloak.init({
           onLoad: 'check-sso',
           checkLoginIframe: false,
-          pkceMethod: 'S256'
+          // pkceMethod: 'S256'
         });
-
+        console.log("check authentication", authenticated)
         setAuthenticated(authenticated);
 
         if (authenticated) {
+          console.log("authentcated, and the keycloak token value is ", keycloak.token)
           setToken(keycloak.token || null);
           setUser(keycloak.tokenParsed);
+
+          // store token in localstorage for API calls
+          if(keycloak.token){
+            localStorage.setItem('keycloak-token', keycloak.token);
+          }
 
           //   Setup refresh token
           keycloak.onTokenExpired = () => {
@@ -70,15 +76,18 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     });
   };
 
-  const logout = () => {
-    keycloak.logout({
-      redirectUri: window.location.origin
-    });
-  };
+  // const logout = () => {
+  //   keycloak.logout({
+  //     redirectUri: window.location.origin
+  //   });
+  // };
 
-  const hasRole = (role: string): boolean => {
-    return keycloak.hasResourceRole(role) || keycloak.hasRealmRole(role);
-  };
+  const logout = () => {
+    localStorage.removeItem('keycloak-token');
+    keycloak.logout({
+      redirectUri:  window.location.origin
+    });
+  }
 
   const contextValue: AuthContextType = {
     authenticated,
@@ -87,7 +96,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     user,
     login,
     logout,
-    hasRole
   };
 
   return (

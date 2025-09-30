@@ -21,14 +21,12 @@
       ],
 
       "protocol": "openid-connect",
-      "publicClient": false,
+      "publicClient": true,
       "standardFlowEnabled": true,
       "implicitFlowEnabled": false,
-      "directAccessGrantsEnabled": false,
+      "directAccessGrantsEnabled": true,
       "serviceAccountsEnabled": false,
       "frontchannelLogout": true,
-      "clientAuthenticatorType": "client-secret",
-      "secret": "dev-secret",
       "attributes": {
         "pkce.code.challenge.method": "S256"
       }
