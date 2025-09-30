@@ -24,10 +24,10 @@ class KeycloakJWTAuthentication(BaseAuthentication):
     def authenticate(self, request) -> Optional[Tuple[object, dict]]:
         auth = get_authorization_header(request).split()
 
-        logger.info(f"Auth header received: {auth}")
-        logger.info(f"KEYCLOAK_JWKS_URL: {settings.KEYCLOAK_JWKS_URL}")
-        logger.info(f"KEYCLOAK_ISSUER: {settings.KEYCLOAK_ISSUER}")
-        logger.info(f"KEYCLOAK_AUDIENCE: {settings.KEYCLOAK_AUDIENCE}")
+        # logger.info(f"Auth header received: {auth}")
+        # logger.info(f"KEYCLOAK_JWKS_URL: {settings.KEYCLOAK_JWKS_URL}")
+        # logger.info(f"KEYCLOAK_ISSUER: {settings.KEYCLOAK_ISSUER}")
+        # logger.info(f"KEYCLOAK_AUDIENCE: {settings.KEYCLOAK_AUDIENCE}")
 
         if not auth or auth[0].lower() != b"bearer":
             return None
