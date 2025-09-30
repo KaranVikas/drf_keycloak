@@ -3,11 +3,10 @@ import { useAuth } from '../contexts/AuthContext.tsx';
 
 interface ProtectedRouteProps {
   children: ReactNode;
-  roles?: string[];
 }
 
-const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children, roles }) => {
-  const { authenticated, loading, login, hasRole } = useAuth();
+const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
+  const { authenticated, loading, login } = useAuth();
 
   if (loading){
     return (
@@ -30,20 +29,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children, roles }) => {
     )
   }
 
-//   Check if user has requried roles
-  if(roles && roles.length > 0){
-    const hasRequiredRole = roles.some(role => hasRole(role));
-    if(!hasRequiredRole){
-      return(
-          <div className="flex items-center justify-center min-h-screen">
-            <div className="text-center text-red-500">
-              <h2 className="text-xl mb-4">Access Denied</h2>
-              <p>You don;t have permissions to access this page.</p>
-            </div>
-          </div>
-      )
-    }
-  }
+  return <>{children}</>
 }
 
 export default ProtectedRoute;

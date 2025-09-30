@@ -13,6 +13,11 @@ class ApiService {
     const headers: Record<string, string> = {
       'Content-Type':'application/json',
     };
+
+    // Debug: Log the token
+    console.log('Getting auth headers, token:', keycloak.token ? 'Present' : 'Missing');
+    console.log('Keycloak authenticated:', keycloak.authenticated);
+
     if(keycloak.token){
       headers['Authorization'] = `Bearer ${keycloak.token}`;
     }

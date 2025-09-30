@@ -5,7 +5,6 @@
 DJANGO_DEBUG=True
 USE_DOCKER=yes
 DJANGO_ACCOUNT_ALLOW_REGISTRATION=True
-DJANGO_ADMIN_FORCE_ALLAUTH=False
 
 # Secret key (development only)
 DJANGO_SECRET_KEY=dev-secret-key-change-me
@@ -24,6 +23,12 @@ REDIS_URL=redis://redis:6379/0
 
 # Keycloak (matches compose/local/keycloak realm import)
 KEYCLOAK_REALM=todo
-KEYCLOAK_SERVER=http://localhost:8080
+KEYCLOAK_SERVER=http://keycloak:8080
+KEYCLOAK_AUDIENCE=todo
+KEYCLOAK_LEEWAY=60
 KEYCLOAK_CLIENT_ID=todo
 KEYCLOAK_CLIENT_SECRET=dev-secret
+
+# Add these missing settings:
+KEYCLOAK_JWKS_URL=http://keycloak:8080/realms/todo/protocol/openid-connect/certs
+KEYCLOAK_ISSUER=http://localhost:8080/realms/todo

@@ -10,17 +10,9 @@ from drf_spectacular.views import SpectacularSwaggerView
 from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
-    path(
-        "about/",
-        TemplateView.as_view(template_name="pages/about.html"),
-        name="about",
-    ),
+
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
-    # User management
-    path("users/", include("todo.users.urls", namespace="users")),
-    path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
     # ...
     # Media files
@@ -32,16 +24,13 @@ urlpatterns += [
     # API base url
     path("api/", include("config.api_router")),
     # DRF auth token
-    path("api/auth-token/", obtain_auth_token, name="obtain_auth_token"),
     path("api/schema/", SpectacularAPIView.as_view(), name="api-schema"),
     path(
         "api/docs/",
         SpectacularSwaggerView.as_view(url_name="api-schema"),
         name="api-docs",
     ),
-  # keycloak patterns
-  path('api/auth/', include('todo.authentication.urls')),
-  path('api/todos/', include('todo.todos.urls')),
+
 ]
 
 if settings.DEBUG:

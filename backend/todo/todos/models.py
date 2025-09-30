@@ -1,24 +1,36 @@
-import uuid
 from django.db import models
-from django.contrib.auth import get_user_model
-
-User = get_user_model()
+from django.conf import settings
 
 class Todo(models.Model):
   """
-    Simple Todo model linked to authenticated users.
-    Each todo belongs to a specific user from keycloak.
+  Simple todo model to create CRUD operations
+  Links to keycloak user via (subject) field
   """
 
-  id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-  title = models.CharField(max_length=255)
+  #link to keycloak user (no foreign key to user model)
+  user_sub = models.CharField(
+    max_length=255,
+    help_text="Keycloak user subject (sub claim from JWT)"
+  )
+
+  # Todo fields
+  title = models.CharField(max_length=200)
+  description = models.TextField(blank=True)
   completed = models.BooleanField(default=False)
+
+  #Timestamps
   created_at = models.DateTimeField(auto_now_add=True)
-  updated_at = models.DateTimeField(auto_new=True)
-  user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='todos')
+  updated_at = models.DateTimeField(auto_now=True)
 
   class Meta:
-    ordering = ['-created_at']
+    ordering = ["-created_at"]
+    indexes = [
+      # fast user lookup
+      models.Index(fields=['user_sub']),
+    #   fast status filtering
+      models.Index(fields=['completed']),
+    ]
 
   def __str__(self):
-    return f"{self.title} - {self.user.username}"
+    return f"{self.title} - {'' if self.completed else 'O'}"
+
