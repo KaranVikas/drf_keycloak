@@ -4,24 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Remove redundant `logoutUris` from Keycloak realm configuration">
-      <change afterPath="$PROJECT_DIR$/frontend/todo/src/services/api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/todo/src/services/userService.ts" afterDir="false" />
+    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Integrate Keycloak authentication across frontend and backend, streamline token handling, and improve user service logic.">
+      <change afterPath="$PROJECT_DIR$/backend/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/todos/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/todos/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/todos/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/todos/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/todos/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/todo/todos/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.envs/.local/.django" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.envs/.local/.django" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/compose/local/keycloak/realm-export/todo-realm.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/compose/local/keycloak/realm-export/todo-realm.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/api_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/api_router.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/config/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/settings/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/auth_keycloak/authentication.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/auth_keycloak/authentication.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/users/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/todo/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/todo/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/todo/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/todo/src/components/AuthButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/components/AuthButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/todo/src/components/ProtectedRoute.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/components/ProtectedRoute.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/todo/src/components/TodoApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/components/TodoApp.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/todo/src/contexts/AuthContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/contexts/AuthContext.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/todo/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/todo/src/services/apiService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/services/apiService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/users/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/users/serializers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,6 +116,7 @@
       <recent name="C:\Users\karan\work\todo\compose\local\celery-beat" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\karan\work\todo\backend\todo" />
       <recent name="C:\Users\karan\work\todo\backend\todo\users" />
       <recent name="C:\Users\karan\work\todo\frontend\todo\src\contexts" />
       <recent name="C:\Users\karan\work\todo\frontend" />
@@ -167,7 +162,7 @@
       <workItem from="1758943287926" duration="3270000" />
       <workItem from="1758993535873" duration="6473000" />
       <workItem from="1759080407809" duration="10420000" />
-      <workItem from="1759169826910" duration="14076000" />
+      <workItem from="1759169826910" duration="29667000" />
     </task>
     <task id="LOCAL-00001" summary="Removed all project-specific and configurational files to clean up the repository.">
       <option name="closed" value="true" />
@@ -321,7 +316,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758933481583</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Integrate Keycloak authentication across frontend and backend, streamline token handling, and improve user service logic.">
+      <option name="closed" value="true" />
+      <created>1759193764742</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1759193764742</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -370,6 +373,7 @@
     <MESSAGE value="Remove users API and URLs; migrate views to unified users viewset configuration" />
     <MESSAGE value="Remove allauth templates, configurations, and related files; clean up project dependencies" />
     <MESSAGE value="Remove redundant `logoutUris` from Keycloak realm configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove redundant `logoutUris` from Keycloak realm configuration" />
+    <MESSAGE value="Integrate Keycloak authentication across frontend and backend, streamline token handling, and improve user service logic." />
+    <option name="LAST_COMMIT_MESSAGE" value="Integrate Keycloak authentication across frontend and backend, streamline token handling, and improve user service logic." />
   </component>
 </project>
