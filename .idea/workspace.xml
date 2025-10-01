@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Fix typos in `views.py` and correct model serializer definition in `serializers.py`." />
+    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Comment out excessive logging in Keycloak authentication module.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -150,7 +152,8 @@
       <workItem from="1758943287926" duration="3270000" />
       <workItem from="1758993535873" duration="6473000" />
       <workItem from="1759080407809" duration="10420000" />
-      <workItem from="1759169826910" duration="33080000" />
+      <workItem from="1759169826910" duration="34761000" />
+      <workItem from="1759278603172" duration="528000" />
     </task>
     <task id="LOCAL-00001" summary="Removed all project-specific and configurational files to clean up the repository.">
       <option name="closed" value="true" />
@@ -328,7 +331,23 @@
       <option name="project" value="LOCAL" />
       <updated>1759272072800</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Fix typos in `views.py` and correct model serializer definition in `serializers.py`.">
+      <option name="closed" value="true" />
+      <created>1759272439750</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1759272439750</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Comment out excessive logging in Keycloak authentication module.">
+      <option name="closed" value="true" />
+      <created>1759272550666</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1759272550666</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,6 +399,7 @@
     <MESSAGE value="Integrate Keycloak authentication across frontend and backend, streamline token handling, and improve user service logic." />
     <MESSAGE value="Add Todo app with CRUD functionality and integrate it into the API router." />
     <MESSAGE value="Fix typos in `views.py` and correct model serializer definition in `serializers.py`." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix typos in `views.py` and correct model serializer definition in `serializers.py`." />
+    <MESSAGE value="Comment out excessive logging in Keycloak authentication module." />
+    <option name="LAST_COMMIT_MESSAGE" value="Comment out excessive logging in Keycloak authentication module." />
   </component>
 </project>
