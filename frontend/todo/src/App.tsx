@@ -3,10 +3,13 @@ import {AuthProvider} from "./contexts/AuthContext.tsx";
 import AuthButton from "./components/AuthButton.tsx";
 import ProtectedRoute from './components/ProtectedRoute.tsx'
 import TodoApp from "./components/TodoApp.tsx";
+import {TodoProvider} from "./contexts/TodoContext.tsx";
 
 function App() {
  return (
         <AuthProvider>
+           <TodoProvider>
+
             <div className="min-h-screen bg-gray-100">
                 <header className="bg-white shadow-sm border-b">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,6 +28,7 @@ function App() {
                     {/*</ProtectedRoute>*/}
                 </main>
             </div>
+              </TodoProvider>
         </AuthProvider>
     );
 }
