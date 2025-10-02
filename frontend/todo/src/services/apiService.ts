@@ -1,5 +1,5 @@
 import keycloak from '../keycloak'
-
+import { CreateTodoRequest, Todo, TodosResponse, UpdateTodoRequest}  from '../types/todo';
 const API_BASE_URL = 'http://localhost:8000/api'
 
 interface ApiRequestOptions {
@@ -76,34 +76,38 @@ class ApiService {
     }
   }
 
-//   Example API methods
+//   USER ENDPOINTS
   async getProfile(): Promise<any> {
     return this.request('/auth/profile');
   }
 
-  async getTodos(): Promise<any[]> {
-        return this.request('/todos');
+  async getCurrentUser(): Promise<any>{
+    return this.request('/users/me');
+  }
+
+  async getTodos(): Promise<TodosResponse> {
+        return this.request<TodosResponse>('/todos');
     }
 
-    async createTodo(todo: any): Promise<any> {
-        return this.request('/todos', {
-            method: 'POST',
-            body: todo,
-        });
-    }
+  async createTodo(todoData: CreateTodoRequest): Promise<Todo> {
+      return this.request<Todo>('/todos', {
+          method: 'POST',
+          body: todoData,
+      });
+  }
 
-    async updateTodo(id: string, todo: any): Promise<any> {
-        return this.request(`/todos/${id}`, {
-            method: 'PUT',
-            body: todo,
-        });
-    }
+  async updateTodo(id: number, todoData: UpdateTodoRequest): Promise<Todo> {
+      return this.request<Todo>(`/todos/${id}`, {
+          method: 'PUT',
+          body: todoData,
+      });
+  }
 
-    async deleteTodo(id: string): Promise<void> {
-        return this.request(`/todos/${id}`, {
-            method: 'DELETE',
-        });
-    }
+  async deleteTodo(id: number): Promise<Todo> {
+      return this.request<Todo>(`/todos/${id}`, {
+          method: 'DELETE',
+      });
+  }
 
 }
 
