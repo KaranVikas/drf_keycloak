@@ -1,6 +1,6 @@
 import React, {createContext, useContext, useState, useEffect } from 'react'
 import type {CreateTodoRequest, Todo, UpdateTodoRequest} from "../types/todo";
-import apiService from '../services/apiService';
+import {apiService} from '../services/apiService';
 import { useAuth } from './AuthContext';
 
 
@@ -64,7 +64,7 @@ export const TodoProvider: React.FC<{children: React.ReactNode}> = ({
     setError(null);
 
     try {
-      const updatedTodo = await apiService.updateTodo(id, todoDate);
+      const updatedTodo = await apiService.updateTodo(id, todoData);
       setTodos(prev => prev.map(todo => todo.id === id ? updatedTodo : todo));
     } catch (err: any) {
       setError(err.response?.data?.detail || 'Failed to update data');
@@ -100,7 +100,7 @@ export const TodoProvider: React.FC<{children: React.ReactNode}> = ({
 
   return (
       <TodoContext.Provider value={{todos, loading, error, createTodo, updateTodo, deleteTodo, toggleComplete, refreshTodos}}>
-        {{children}}
+        {children}
       </TodoContext.Provider>
   )
 }
