@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Add base components, context, and structure for Todo app in frontend">
-      <change afterPath="$PROJECT_DIR$/frontend/todo/src/types/todo.ts" afterDir="false" />
+    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Add `TodoProvider`, `CreateTodoForm`, and `TodoList` components for managing and displaying todos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/todo/src/components/TodoForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/components/CreateTodoForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/src/components/TodoItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/components/TodoItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/src/contexts/TodoContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/contexts/TodoContext.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/todo/src/services/apiService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/services/apiService.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -158,7 +158,11 @@
       <workItem from="1758993535873" duration="6473000" />
       <workItem from="1759080407809" duration="10420000" />
       <workItem from="1759169826910" duration="34761000" />
-      <workItem from="1759278603172" duration="5935000" />
+      <workItem from="1759278603172" duration="6756000" />
+      <workItem from="1759368462176" duration="5883000" />
+      <workItem from="1759417664117" duration="26000" />
+      <workItem from="1759417937218" duration="3782000" />
+      <workItem from="1759424332521" duration="3326000" />
     </task>
     <task id="LOCAL-00001" summary="Removed all project-specific and configurational files to clean up the repository.">
       <option name="closed" value="true" />
@@ -360,7 +364,47 @@
       <option name="project" value="LOCAL" />
       <updated>1759279579269</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Define TypeScript interfaces for Todo types and update API service for type-safe operations">
+      <option name="closed" value="true" />
+      <created>1759285513838</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1759285513838</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Add `TodoItem` component with edit, delete, and toggle completion functionalities">
+      <option name="closed" value="true" />
+      <created>1759370225791</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1759370225791</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Refactor `TodoItem` logic into `TodoContext` for improved state management and reusability.">
+      <option name="closed" value="true" />
+      <created>1759415842802</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1759415842802</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Add `TodoItem` component with editable fields, delete, and toggle completion functionality">
+      <option name="closed" value="true" />
+      <created>1759420767097</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1759420767097</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Add `TodoProvider`, `CreateTodoForm`, and `TodoList` components for managing and displaying todos">
+      <option name="closed" value="true" />
+      <created>1759421746267</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1759421746267</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -377,7 +421,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="keycloak" />
                       </list>
                     </value>
                   </entry>
@@ -390,10 +434,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Removed all project-specific and configurational files to clean up the repository." />
-    <MESSAGE value="Added initial project setup files and configurations. Includes environment variables for Django, PostgreSQL, Keycloak, and Redis, along with editor, version control, pre-commit hooks, and templates for frontend and backend." />
-    <MESSAGE value="Add foundational project setup with Django templates and configuration files.&#10;&#10;- Included base Django templates (`base.html`, error pages: 403, 404, 500).&#10;- Added project configuration files: `base.py`, `local.py`, `test.py`, `production.py`.&#10;- Introduced `.idea` code style configuration.&#10;- Configured static and media handling with AWS S3 in production settings.&#10;- Established initial middleware, authentication, and app setup." />
-    <MESSAGE value="Added base templates (`base.html`, error pages), and new Django settings for `local`, `test`, and `production` environments. Configured security, email, caching, and Keycloak integration." />
     <MESSAGE value="Add `ProtectedRoute`, `TodoApp`, and `AuthButton` components to frontend" />
     <MESSAGE value="Add `AuthButton` component for authentication handling in frontend" />
     <MESSAGE value="Add `apiService` utility and integrate with `TodoApp` component" />
@@ -414,6 +454,11 @@
     <MESSAGE value="Fix typos in `views.py` and correct model serializer definition in `serializers.py`." />
     <MESSAGE value="Comment out excessive logging in Keycloak authentication module." />
     <MESSAGE value="Add base components, context, and structure for Todo app in frontend" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add base components, context, and structure for Todo app in frontend" />
+    <MESSAGE value="Define TypeScript interfaces for Todo types and update API service for type-safe operations" />
+    <MESSAGE value="Add `TodoItem` component with edit, delete, and toggle completion functionalities" />
+    <MESSAGE value="Refactor `TodoItem` logic into `TodoContext` for improved state management and reusability." />
+    <MESSAGE value="Add `TodoItem` component with editable fields, delete, and toggle completion functionality" />
+    <MESSAGE value="Add `TodoProvider`, `CreateTodoForm`, and `TodoList` components for managing and displaying todos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add `TodoProvider`, `CreateTodoForm`, and `TodoList` components for managing and displaying todos" />
   </component>
 </project>

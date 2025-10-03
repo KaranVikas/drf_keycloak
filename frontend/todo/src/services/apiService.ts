@@ -1,5 +1,5 @@
 import keycloak from '../keycloak'
-import { CreateTodoRequest, Todo, TodosResponse, UpdateTodoRequest}  from '../types/todo';
+import type { CreateTodoRequest, Todo, TodosResponse, UpdateTodoRequest}  from '../types/todo';
 const API_BASE_URL = 'http://localhost:8000/api'
 
 interface ApiRequestOptions {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Todo, UpdateTodoRequest} from '../types/todo';
+import type { Todo, UpdateTodoRequest} from '../types/todo';
 import { useTodos } from '../contexts/TodoContext';
 
 interface TodoItemProps {
@@ -19,7 +19,7 @@ const TodoItem: React.FC<TodoItemProps> = ({todo}) => {
   try{
     await toggleComplete(todo.id);
   } catch(error) {
-    console.log('Failed to toggle complete':error);
+    console.log('Failed to toggle complete:',error);
   }  finally {
     setIsLoading(false);
   }
@@ -37,6 +37,8 @@ const TodoItem: React.FC<TodoItemProps> = ({todo}) => {
       setIsEditing(false);
     } catch(error){
       console.log('Failed to update todo: ',error);
+    } finally {
+      setIsLoading(false)
     }
   };
 
@@ -52,7 +54,7 @@ const TodoItem: React.FC<TodoItemProps> = ({todo}) => {
     }
   }
 
-  const handleCancelEdit = (): void() => {
+  const handleCancelEdit = (): void => {
     setEditTitle(todo.title);
     setEditDescription(todo.description);
     setIsEditing(false);
@@ -79,9 +81,9 @@ const TodoItem: React.FC<TodoItemProps> = ({todo}) => {
           />
           <div className="flex space-x-2">
             <button
-              onClick={handleSaveEdit}>
-              disabled={isLoading || !editTitle.trim()}
-              className={"px-3 py-1 bg-green-500 text-white rounded text-sm hover:bg-green-600 disabled:bg-gray-300 transition-colors"}
+              onClick={handleSaveEdit}
+              disabled={isLoading || !editTitle.trim() }
+              className="px-3 py-1 bg-green-500 text-white rounded text-sm hover:bg-green-600 disabled:bg-gray-300 transition-colors"
             >
               {isLoading ? '...' : 'Save'}
             </button>
@@ -115,7 +117,7 @@ const TodoItem: React.FC<TodoItemProps> = ({todo}) => {
           <div className={"flex=1"}>
             <h3 className={`font-medium ${todo.completed ? 'line-through text-gray-500' : 'text-gray-800'}`}>
             {todo.title}
-          </h3>
+            </h3>
           {todo.description && (
             <p className={`text-sm mt-1 ${todo.completed ? 'line-through text-gray-400' : 'text-gray-600'}`}>
               {todo.description}
