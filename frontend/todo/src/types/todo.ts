@@ -28,3 +28,11 @@ export interface ApiRequestOptions {
   headers?: Record<string,string>;
   body?: any;
 }
+
+export interface RegisterUserData {
+  username: string;
+  email: string;
+  password: string;
+  password_confirm: string;
+  name?: string;
+}

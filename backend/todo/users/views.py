@@ -8,8 +8,24 @@ from rest_framework.permissions import IsAuthenticated
 from todo.auth_keycloak.authentication import KeycloakJWTAuthentication
 
 from todo.users.models import User
-#
-# from todo.users.serializers import UserSerializer
+from .serializers import UserSerializer, UserRegisterationSerializer
+
+# Get the User Model
+User = get_user_model()
+
+@api_view(['POST'])
+@permission_classes([AllowAny])
+def register_user(request):
+  """
+  Register a new user
+  """
+  serializer = UserRegisterationSerializer(data=request.data)
+  if serializer.is_valid():
+    user = serializer.save()
+    return Response(
+      UserSerializer(user).data,
+      status=status.HTTP_201_CREATED
+    )
 
 class UserViewSet(GenericViewSet):
   authentication_classes = [KeycloakJWTAuthentication]
