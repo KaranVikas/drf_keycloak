@@ -1,12 +1,7 @@
 import keycloak from '../keycloak'
 import type { CreateTodoRequest, Todo, TodosResponse, UpdateTodoRequest}  from '../types/todo';
 const API_BASE_URL = 'http://localhost:8000/api'
-
-interface ApiRequestOptions {
-  method?: string;
-  headers?: Record<string,string>;
-  body?: any;
-}
+import type { ApiRequestOptions } from '../types/todo'
 
 class ApiService {
   private getAuthHeaders(): Record<string, string> {
@@ -46,7 +41,7 @@ class ApiService {
       console.log("config", config)
       const response = await fetch(url, config);
 
-      console.log(`🔍 Response status: ${response.status}`);
+      console.log(`Response status: ${response.status}`);
 
 
       if(response.status === 401){
@@ -54,7 +49,7 @@ class ApiService {
 
         //token might be expired  try to refresh
         const refreshed = await keycloak.updateToken(30);
-        console.log('🔍 Token refresh result:', refreshed);
+        console.log('Token refresh result:', refreshed);
 
         if (refreshed && keycloak.token){
           console.log('Retrying with new token... ')

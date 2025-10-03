@@ -22,3 +22,9 @@ export interface TodosResponse {
   count: number;
   results: Todo[];
 }
+
+export interface ApiRequestOptions {
+  method?: string;
+  headers?: Record<string,string>;
+  body?: any;
+}

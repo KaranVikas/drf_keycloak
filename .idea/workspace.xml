@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Fix logging in `TodoViewSet`, correct typos, add `TodoList` to `TodoApp`, and update `TodoItem` styles.">
+    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Improve logging in `TodoViewSet`, refine API service endpoints, and correct typos in frontend components.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/todos/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/todos/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/todo/src/services/apiService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/services/apiService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/src/types/todo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/types/todo.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +161,7 @@
       <workItem from="1759368462176" duration="5883000" />
       <workItem from="1759417664117" duration="26000" />
       <workItem from="1759417937218" duration="3782000" />
-      <workItem from="1759424332521" duration="14399000" />
+      <workItem from="1759424332521" duration="19006000" />
     </task>
     <task id="LOCAL-00001" summary="Removed all project-specific and configurational files to clean up the repository.">
       <option name="closed" value="true" />
@@ -419,7 +419,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759461800244</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Improve logging in `TodoViewSet`, refine API service endpoints, and correct typos in frontend components.">
+      <option name="closed" value="true" />
+      <created>1759464945578</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1759464945578</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,7 +457,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add `apiService` utility and integrate with `TodoApp` component" />
     <MESSAGE value="Fix file imports, typos, and CORS settings; integrate `TodoApp` with apiService" />
     <MESSAGE value="Add authentication and todos APIs; update `.editorconfig` and increase consistency" />
     <MESSAGE value="Integrate Keycloak authentication middleware and backend; update CORS and authentication settings." />
@@ -474,6 +481,7 @@
     <MESSAGE value="Add `TodoProvider`, `CreateTodoForm`, and `TodoList` components for managing and displaying todos" />
     <MESSAGE value="Fix type errors, improve `TodoItem` styles, and align `TodoContext` logic with updated `apiService`." />
     <MESSAGE value="Fix logging in `TodoViewSet`, correct typos, add `TodoList` to `TodoApp`, and update `TodoItem` styles." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix logging in `TodoViewSet`, correct typos, add `TodoList` to `TodoApp`, and update `TodoItem` styles." />
+    <MESSAGE value="Improve logging in `TodoViewSet`, refine API service endpoints, and correct typos in frontend components." />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve logging in `TodoViewSet`, refine API service endpoints, and correct typos in frontend components." />
   </component>
 </project>
