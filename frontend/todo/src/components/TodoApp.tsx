@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { userService } from '../services/userService';
+import TodoList from './TodoList';
 
 const TodoApp: React.FC = () => {
   const { authenticated, loading, login, logout, user } = useAuth();
@@ -30,7 +31,7 @@ const TodoApp: React.FC = () => {
     }
   };
 
-  if (loading) {
+  if(loading) {
     return <div>Loading authentication...</div>;
   }
 
@@ -52,11 +53,18 @@ const TodoApp: React.FC = () => {
       {apiLoading ? (
         <p>Loading user data...</p>
       ) : (
-        <div>
-          <h2>API Test</h2>
-          <pre>{JSON.stringify(userData, null, 2)}</pre>
-          <button onClick={fetchUserData}>Refresh User Data</button>
-        </div>
+          <>
+            <div>
+              <h2>API Test</h2>
+              {/*<pre>{JSON.stringify(userData, null, 2)}</pre>*/}
+              <button onClick={fetchUserData}>Refresh User Data</button>
+              {userData && (
+                  <pre className="text-xs overflow-auto">
+                              {JSON.stringify(userData, null, 2)}
+                          </pre>
+              )}
+            </div>
+            <TodoList/></>
       )}
     </div>
   );

@@ -13,16 +13,17 @@ const TodoItem: React.FC<TodoItemProps> = ({todo}) => {
   const [editDescription, setEditDescription] = useState(todo.description);
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleToggleComplete = async () : Promise<void> => {
+  const handleToggleComplete = async (): Promise<void> => {
     setIsLoading(true);
-  }
-  try{
+    try{
     await toggleComplete(todo.id);
   } catch(error) {
     console.log('Failed to toggle complete:',error);
   }  finally {
     setIsLoading(false);
   }
+  }
+
 
   const handleSaveEdit = async (): Promise<void> => {
     if(!editTitle.trim()) return;
@@ -114,7 +115,7 @@ const TodoItem: React.FC<TodoItemProps> = ({todo}) => {
             {todo.completed && '✓'}
           </button>
 
-          <div className={"flex=1"}>
+          <div className="flex=1">
             <h3 className={`font-medium ${todo.completed ? 'line-through text-gray-500' : 'text-gray-800'}`}>
             {todo.title}
             </h3>
