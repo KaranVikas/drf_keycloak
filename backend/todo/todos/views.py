@@ -43,14 +43,20 @@ class TodoViewSet(ModelViewSet):
     Create a new todo for the authenticated user
     """
 
+    logger.info(f"create request - User: {request.user}")
+    logger.info(f"create request - Data: {request.data}")
+    logger.info(f"create request - Headers: {request.headers}")
+
+    logger.info(f"request.user.id : {request.user.id}")
+    logger.info(f"request.user.username: {request.user.username}")
+
     serializer = self.get_serializer(data=request.data)
     serializer.is_valid(raise_exception=True)
 
     #Save with user_sub from JWT token
 
     todo = serializer.save(user_sub = request.user.id)
-    logger.info("request.user.id", request.user.id)
-    logger.info("request.user.username", request.user.username)
+
 
     #Return full todo data
     response_serializer = TodoSerializer(todo)

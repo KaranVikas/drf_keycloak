@@ -41,12 +41,23 @@ class ApiService {
     }
 
     try{
+      console.log()
+      console.log("url",url)
+      console.log("config", config)
       const response = await fetch(url, config);
 
+      console.log(`🔍 Response status: ${response.status}`);
+
+
       if(response.status === 401){
+        console.log('401 error - trying to refresh token...');
+
         //token might be expired  try to refresh
         const refreshed = await keycloak.updateToken(30);
+        console.log('🔍 Token refresh result:', refreshed);
+
         if (refreshed && keycloak.token){
+          console.log('Retrying with new token... ')
         //   Retry the request with new token
           config.headers = {
             ...this.getAuthHeaders(),
@@ -86,25 +97,25 @@ class ApiService {
   }
 
   async getTodos(): Promise<TodosResponse> {
-        return this.request<TodosResponse>('/todos');
+        return this.request<TodosResponse>('/todos/');
     }
 
   async createTodo(todoData: CreateTodoRequest): Promise<Todo> {
-      return this.request<Todo>('/todos', {
+      return this.request<Todo>('/todos/', {
           method: 'POST',
           body: todoData,
       });
   }
 
   async updateTodo(id: number, todoData: UpdateTodoRequest): Promise<Todo> {
-      return this.request<Todo>(`/todos/${id}`, {
+      return this.request<Todo>(`/todos/${id}/`, {
           method: 'PUT',
           body: todoData,
       });
   }
 
   async deleteTodo(id: number): Promise<Todo> {
-      return this.request<Todo>(`/todos/${id}`, {
+      return this.request<Todo>(`/todos/${id}/`, {
           method: 'DELETE',
       });
   }
