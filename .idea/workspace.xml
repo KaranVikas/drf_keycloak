@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Add `UserRegisterationSerializer` with validation for username, email, and password-confirmation handling in `serializers.py`.">
+    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Add `RegisterUserData` interface to `types/todo.ts` and implement `register_user` API in `views.py` with validation logic.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/src/services/apiService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/services/apiService.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,6 +161,7 @@
       <workItem from="1759417664117" duration="26000" />
       <workItem from="1759417937218" duration="3782000" />
       <workItem from="1759424332521" duration="24645000" />
+      <workItem from="1759509733439" duration="1418000" />
     </task>
     <task id="LOCAL-00001" summary="Removed all project-specific and configurational files to clean up the repository.">
       <option name="closed" value="true" />
@@ -442,7 +443,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759506251100</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Add `RegisterUserData` interface to `types/todo.ts` and implement `register_user` API in `views.py` with validation logic.">
+      <option name="closed" value="true" />
+      <created>1759510276764</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1759510276765</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -472,7 +481,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Integrate Keycloak authentication middleware and backend; update CORS and authentication settings." />
     <MESSAGE value="Update Keycloak URL in configuration file" />
     <MESSAGE value="Update Keycloak server URL to use localhost in local environment configuration" />
     <MESSAGE value="Remove deprecated authentication and todos modules; clean up Keycloak integration and related settings." />
@@ -497,6 +505,7 @@
     <MESSAGE value="Improve logging in `TodoViewSet`, refine API service endpoints, and correct typos in frontend components." />
     <MESSAGE value="Extract `ApiRequestOptions` interface to `types/todo.ts` and remove redundant definitions in `apiService`; clean up console logs." />
     <MESSAGE value="Add `UserRegisterationSerializer` with validation for username, email, and password-confirmation handling in `serializers.py`." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add `UserRegisterationSerializer` with validation for username, email, and password-confirmation handling in `serializers.py`." />
+    <MESSAGE value="Add `RegisterUserData` interface to `types/todo.ts` and implement `register_user` API in `views.py` with validation logic." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add `RegisterUserData` interface to `types/todo.ts` and implement `register_user` API in `views.py` with validation logic." />
   </component>
 </project>
