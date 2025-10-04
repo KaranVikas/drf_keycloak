@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Add `RegisterUserData` interface to `types/todo.ts` and implement `register_user` API in `views.py` with validation logic.">
+    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Add `publicRequest` method to `apiService` for reusable public API requests with error handling.">
+      <change afterPath="$PROJECT_DIR$/frontend/todo/src/components/RegisterForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/todo/src/services/apiService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/services/apiService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/src/types/todo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/types/todo.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +31,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -161,7 +167,8 @@
       <workItem from="1759417664117" duration="26000" />
       <workItem from="1759417937218" duration="3782000" />
       <workItem from="1759424332521" duration="24645000" />
-      <workItem from="1759509733439" duration="1418000" />
+      <workItem from="1759509733439" duration="2497000" />
+      <workItem from="1759586671578" duration="6939000" />
     </task>
     <task id="LOCAL-00001" summary="Removed all project-specific and configurational files to clean up the repository.">
       <option name="closed" value="true" />
@@ -451,7 +458,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759510276765</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Add `publicRequest` method to `apiService` for reusable public API requests with error handling.">
+      <option name="closed" value="true" />
+      <created>1759511350461</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1759511350461</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,7 +496,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update Keycloak URL in configuration file" />
     <MESSAGE value="Update Keycloak server URL to use localhost in local environment configuration" />
     <MESSAGE value="Remove deprecated authentication and todos modules; clean up Keycloak integration and related settings." />
     <MESSAGE value="Remove `.idea` project files from version control" />
@@ -506,6 +520,7 @@
     <MESSAGE value="Extract `ApiRequestOptions` interface to `types/todo.ts` and remove redundant definitions in `apiService`; clean up console logs." />
     <MESSAGE value="Add `UserRegisterationSerializer` with validation for username, email, and password-confirmation handling in `serializers.py`." />
     <MESSAGE value="Add `RegisterUserData` interface to `types/todo.ts` and implement `register_user` API in `views.py` with validation logic." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add `RegisterUserData` interface to `types/todo.ts` and implement `register_user` API in `views.py` with validation logic." />
+    <MESSAGE value="Add `publicRequest` method to `apiService` for reusable public API requests with error handling." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add `publicRequest` method to `apiService` for reusable public API requests with error handling." />
   </component>
 </project>
