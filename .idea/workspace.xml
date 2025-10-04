@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Add user registration URL and router integration in `urls.py`">
+    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Refactor `register_user` function to `RegisterUserView` class-based view with improved structure and validation handling.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/users/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/todo/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -162,7 +164,7 @@
       <workItem from="1759417937218" duration="3782000" />
       <workItem from="1759424332521" duration="24645000" />
       <workItem from="1759509733439" duration="2497000" />
-      <workItem from="1759586671578" duration="8831000" />
+      <workItem from="1759586671578" duration="13004000" />
     </task>
     <task id="LOCAL-00001" summary="Removed all project-specific and configurational files to clean up the repository.">
       <option name="closed" value="true" />
@@ -476,7 +478,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759594377841</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Refactor `register_user` function to `RegisterUserView` class-based view with improved structure and validation handling.">
+      <option name="closed" value="true" />
+      <created>1759595984285</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1759595984285</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -506,7 +516,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Remove `.idea` project files from version control" />
     <MESSAGE value="Add Keycloak integration with authentication middleware and JWKS caching; update CORS settings" />
     <MESSAGE value="Remove allauth integration and related configurations, templates, and tests; clean up project dependencies and settings" />
     <MESSAGE value="Remove users API and URLs; migrate views to unified users viewset configuration" />
@@ -531,6 +540,7 @@
     <MESSAGE value="Add `publicRequest` method to `apiService` for reusable public API requests with error handling." />
     <MESSAGE value="Add `RegisterForm` component with validation logic, update types, backend API endpoints, and integrate Bootstrap styling." />
     <MESSAGE value="Add user registration URL and router integration in `urls.py`" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add user registration URL and router integration in `urls.py`" />
+    <MESSAGE value="Refactor `register_user` function to `RegisterUserView` class-based view with improved structure and validation handling." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor `register_user` function to `RegisterUserView` class-based view with improved structure and validation handling." />
   </component>
 </project>

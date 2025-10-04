@@ -15,25 +15,25 @@ from .serializers import UserSerializer, UserRegisterationSerializer
 # Get the User Model
 User = get_user_model()
 
-class RegisterUserView(APIView):
-  """
-  Register a new user
-  """
-
-  permission_classes = [AllowAny]
-
-  def post(self, request):
-    serializer = UserRegisterationSerializer(data=request.data)
-    if serializer.is_valid():
-      user = serializer.save()
-      return Response(serializer.data, status=status.HTTP_201_CREATED)
-    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
 class UserViewSet(GenericViewSet):
   authentication_classes = [KeycloakJWTAuthentication]
   permission_classes = [IsAuthenticated]
+  serializer_class = UserSerializer
 
-  queryset = User.objects.none()
+  def get_queryset(self):
+    return User.objects.all()
+
+  @action(detail=False, methods=['post'], url_path='register', permission_classes=[AllowAny])
+  def register(self, request):
+    """Register a new user"""
+    serializer = UserRegisterationSerializer(data=request.data)
+    if serializer.is_valid():
+      user = serializer.save()
+      return Response(
+        UserSerializer(user).data,
+        status=status.HTTP_201_CREATED
+      )
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
   @action(detail=False, methods=['get'], url_path='me')
   def me(self, request):
