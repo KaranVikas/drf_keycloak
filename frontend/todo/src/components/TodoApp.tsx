@@ -8,7 +8,7 @@ const TodoApp: React.FC = () => {
   const { authenticated, loading, login, logout, user } = useAuth();
   const [userData, setUserData] = useState(null);
   const [apiLoading, setApiLoading] = useState(false);
-  const [showRegistration, setShowRegistration] = useState(true);
+  const [showRegistration, setShowRegistration] = useState(false);
 
   useEffect(() => {
     if (authenticated) {

@@ -1,13 +1,13 @@
 import React, {useState} from 'react'
-import {apiService} from '../services/apiService'
-import type { RegisterFormData, RegisterFormProps } from '../services/apiService';
+import { userService} from '../services/userService';
+import { RegisterUserRequest, RegisterFormProps, RegisterFormData } from '../types/user';
 
 const RegisterForm: React.FC<RegisterFormProps> = ({ onSuccess, onCancel }) => {
   const [formData, setFormData ] = useState<RegisterFormData>({
     username: '',
     email: '',
     password: '',
-    password_confirm: '',
+    confirm_password: '',
     name: '',
   })
 
