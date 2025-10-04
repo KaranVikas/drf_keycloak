@@ -23,7 +23,7 @@ urlpatterns = [
 urlpatterns += [
     # API base url
     path("api/", include("config.api_router")),
-    path("api/users", include("todo.users.urls")),
+    path("api/users/", include("todo.users.urls")),
 
 
     # DRF auth token

@@ -1,14 +1,14 @@
-
-
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { userService } from '../services/userService';
 import TodoList from './TodoList';
+import RegisterForm from './RegisterForm';
 
 const TodoApp: React.FC = () => {
   const { authenticated, loading, login, logout, user } = useAuth();
   const [userData, setUserData] = useState(null);
   const [apiLoading, setApiLoading] = useState(false);
+  const [showRegistration, setShowRegistration] = useState(true);
 
   useEffect(() => {
     if (authenticated) {
@@ -37,10 +37,27 @@ const TodoApp: React.FC = () => {
 
   if (!authenticated) {
     return (
+      <>
       <div>
         <h1>Todo App</h1>
         <button onClick={login}>Login with Keycloak</button>
+        <span>or</span>
+        <button onClick={() => setShowRegistration(true)}>Register</button>
+
+
+
       </div>
+        {
+        showRegistration && (
+          <RegisterForm
+              onSuccess={() => {
+                setShowRegistration(false);
+              }}
+              onCancel={() => setShowRegistration(false)}
+          ></RegisterForm>
+        )
+      }
+      </>
     );
   }
 

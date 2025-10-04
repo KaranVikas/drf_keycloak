@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Refactor `register_user` function to `RegisterUserView` class-based view with improved structure and validation handling.">
+    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Update `register_user` to router-based `UserViewSet`, refine structure and validation, and enhance authentication endpoints.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/users/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/todo/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/src/components/RegisterForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/components/RegisterForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/src/components/TodoApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/components/TodoApp.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/src/services/apiService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/services/apiService.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +167,7 @@
       <workItem from="1759417937218" duration="3782000" />
       <workItem from="1759424332521" duration="24645000" />
       <workItem from="1759509733439" duration="2497000" />
-      <workItem from="1759586671578" duration="13004000" />
+      <workItem from="1759586671578" duration="16163000" />
     </task>
     <task id="LOCAL-00001" summary="Removed all project-specific and configurational files to clean up the repository.">
       <option name="closed" value="true" />
@@ -486,7 +489,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759595984285</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Update `register_user` to router-based `UserViewSet`, refine structure and validation, and enhance authentication endpoints.">
+      <option name="closed" value="true" />
+      <created>1759607438142</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1759607438142</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -516,7 +527,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add Keycloak integration with authentication middleware and JWKS caching; update CORS settings" />
     <MESSAGE value="Remove allauth integration and related configurations, templates, and tests; clean up project dependencies and settings" />
     <MESSAGE value="Remove users API and URLs; migrate views to unified users viewset configuration" />
     <MESSAGE value="Remove allauth templates, configurations, and related files; clean up project dependencies" />
@@ -541,6 +551,7 @@
     <MESSAGE value="Add `RegisterForm` component with validation logic, update types, backend API endpoints, and integrate Bootstrap styling." />
     <MESSAGE value="Add user registration URL and router integration in `urls.py`" />
     <MESSAGE value="Refactor `register_user` function to `RegisterUserView` class-based view with improved structure and validation handling." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor `register_user` function to `RegisterUserView` class-based view with improved structure and validation handling." />
+    <MESSAGE value="Update `register_user` to router-based `UserViewSet`, refine structure and validation, and enhance authentication endpoints." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update `register_user` to router-based `UserViewSet`, refine structure and validation, and enhance authentication endpoints." />
   </component>
 </project>

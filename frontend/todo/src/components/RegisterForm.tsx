@@ -1,13 +1,13 @@
 import React, {useState} from 'react'
 import {apiService} from '../services/apiService'
-import type { RegisterFormData} from '../services/apiService';
+import type { RegisterFormData, RegisterFormProps } from '../services/apiService';
 
 const RegisterForm: React.FC<RegisterFormProps> = ({ onSuccess, onCancel }) => {
   const [formData, setFormData ] = useState<RegisterFormData>({
     username: '',
     email: '',
     password: '',
-    confirm_password: '',
+    password_confirm: '',
     name: '',
   })
 
@@ -160,6 +160,6 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onSuccess, onCancel }) => {
       )
     }
   }
-
-
 }
+
+export default RegisterForm

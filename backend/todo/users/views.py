@@ -19,6 +19,7 @@ class UserViewSet(GenericViewSet):
   authentication_classes = [KeycloakJWTAuthentication]
   permission_classes = [IsAuthenticated]
   serializer_class = UserSerializer
+  queryset = User.objects.all()
 
   def get_queryset(self):
     return User.objects.all()

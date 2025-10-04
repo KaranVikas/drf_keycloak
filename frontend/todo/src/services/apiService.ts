@@ -98,8 +98,9 @@ class ApiService {
     }
 
     try{
+      console.log("Publicrequest url:", url)
       const response = await fetch(url, config);
-
+      console.log("Public request config:", config);
       if(!response.ok){
         throw new Error(`HTTP error! status: ${response.status}`)
       }
