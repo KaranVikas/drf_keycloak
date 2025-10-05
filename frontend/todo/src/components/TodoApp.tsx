@@ -10,7 +10,7 @@ const TodoApp: React.FC = () => {
   const [apiLoading, setApiLoading] = useState(false);
 
   useEffect(() => {
-    if (authenticated) {
+    if (authenticated && !userData) {
       fetchUserData();
     }
   }, [authenticated]);
@@ -28,57 +28,23 @@ const TodoApp: React.FC = () => {
     }
   };
 
-  const handleSyncUser = async () => {
-    if (!authenticated) return;
-
-    setApiLoading(true);
-    try {
-      const data = await userService.syncKeycloakUser();
-      setUserData(data);
-      console.log('User synced:', data);
-    } catch (error) {
-      console.error('Sync error:', error);
-    } finally {
-      setApiLoading(false);
-    }
-  };
+  // const handleSyncUser = async () => {
+  //   if (!authenticated) return;
+  //
+  //   setApiLoading(true);
+  //   try {
+  //     const data = await userService.syncKeycloakUser();
+  //     setUserData(data);
+  //     console.log('User synced:', data);
+  //   } catch (error) {
+  //     console.error('Sync error:', error);
+  //   } finally {
+  //     setApiLoading(false);
+  //   }
+  // };
 
   const handleRegister = () => {
     keycloak.register();
-
-    // Redirect to Keycloak registration page
-  //   console.log('Keycloak Config:', {
-  //     authServerUrl: keycloak.authServerUrl,
-  //     realm: keycloak.realm,
-  //     clientId: keycloak.clientId,
-  //     // configured: keycloak.configured
-  // });
-  //
-  //   if (!keycloak.authServerUrl || !keycloak.realm || !keycloak.clientId) {
-  //   console.error('Keycloak not properly configured');
-  //   alert('Registration not available - Keycloak configuration missing');
-  //   return;
-  // }
-  //
-  //   const registrationKeycloakUrl = `${keycloak.authServerUrl}/realms/${keycloak.realm}/protocol/openid-connect/registrations?client_id=${keycloak.clientId}&response_type=code&redirect_uri=${encodeURIComponent(window.location.origin)}`;
-  //   console.log("registration Keycloak Url")
-  //   window.location.href = registrationKeycloakUrl;
-  //   // Test if registration is enabled by making a simple request first
-  // fetch(registrationKeycloakUrl)
-  //   .then(response => {
-  //     if (response.ok || response.status === 302) {
-  //       // Registration page exists, redirect
-  //       window.location.href = registrationKeycloakUrl;
-  //     } else {
-  //       console.error('Registration not available, status:', response.status);
-  //       alert('User registration is not enabled in Keycloak. Please contact your administrator.');
-  //     }
-  //   })
-  //   .catch(error => {
-  //     console.error('Registration check failed:', error);
-  //     // Try anyway
-  //     window.location.href = registrationKeycloakUrl;
-  //   });
 
   };
 
@@ -106,32 +72,19 @@ const TodoApp: React.FC = () => {
           <p>User: {user?.preferred_username}</p>
         </div>
         <div style={{ display: 'flex', gap: '10px' }}>
-          <button
-            onClick={handleSyncUser}
-            disabled={apiLoading}
-            style={{
-              padding: '8px 16px',
-              backgroundColor: apiLoading ? '#ccc' : '#28a745',
-              color: 'white',
-              border: 'none',
-              borderRadius: '4px',
-              cursor: apiLoading ? 'not-allowed' : 'pointer'
-            }}
-          >
-            {apiLoading ? 'Syncing...' : 'Sync User'}
-          </button>
-          <button
-            onClick={logout}
-            style={{
-              padding: '8px 16px',
-              backgroundColor: '#dc3545',
-              color: 'white',
-              border: 'none',
-              borderRadius: '4px'
-            }}
-          >
-            Logout
-          </button>
+          {/*/*/}
+          {/*<button*/}
+          {/*  onClick={logout}*/}
+          {/*  style={{*/}
+          {/*    padding: '8px 16px',*/}
+          {/*    backgroundColor: '#dc3545',*/}
+          {/*    color: 'white',*/}
+          {/*    border: 'none',*/}
+          {/*    borderRadius: '4px'*/}
+          {/*  }}*/}
+          {/*>*/}
+          {/*  Logout*/}
+          {/*</button>*/}
         </div>
       </div>
 

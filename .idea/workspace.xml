@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Refactor `RegisterForm` for improved form handling, validation, and better error rendering; enhance `TodoApp` to integrate Keycloak registration and user synchronization logic.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/todo/src/components/RegisterForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/components/RegisterForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/todo/src/components/TodoApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/components/TodoApp.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/src/contexts/AuthContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/contexts/AuthContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/src/services/apiService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/services/apiService.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +164,8 @@
       <workItem from="1759417937218" duration="3782000" />
       <workItem from="1759424332521" duration="24645000" />
       <workItem from="1759509733439" duration="2497000" />
-      <workItem from="1759586671578" duration="36391000" />
+      <workItem from="1759586671578" duration="38312000" />
+      <workItem from="1759684195756" duration="1586000" />
     </task>
     <task id="LOCAL-00001" summary="Removed all project-specific and configurational files to clean up the repository.">
       <option name="closed" value="true" />
@@ -517,7 +519,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759622508092</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Refactor `RegisterForm` for improved form handling, validation, and better error rendering; enhance `TodoApp` to integrate Keycloak registration and user synchronization logic.">
+      <option name="closed" value="true" />
+      <created>1759632730195</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1759632730195</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

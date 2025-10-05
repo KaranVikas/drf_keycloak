@@ -84,35 +84,7 @@ class ApiService {
     }
   }
 
-  // private async publicRequest<T>(endpoint: string, options: ApiRequestOptions = {}): Promise<T>{
-  //   const url = `${API_BASE_URL}${endpoint}`
-  //
-  //   const config: RequestInit = {
-  //     method: options.method || 'GET',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       ...options.headers,
-  //     },
-  //   };
-  //
-  //   if(options.body){
-  //     config.body = JSON.stringify(options.body)
-  //   }
-  //
-  //   try{
-  //     console.log("Publicrequest url:", url)
-  //     const response = await fetch(url, config);
-  //     console.log("Public request config:", config);
-  //     if(!response.ok){
-  //       throw new Error(`HTTP error! status: ${response.status}`)
-  //     }
-  //     return await response.json();
-  //   } catch(error) {
-  //     console.error(`API request failed: ${url}`, error);
-  //     throw error;
-  //   }
-  //
-  // }
+
 
 //   USER ENDPOINTS
   async registerUser(userData: RegisterUserRequest): Promise<RegisterUserResponse> {
