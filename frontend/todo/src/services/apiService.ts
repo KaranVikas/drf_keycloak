@@ -1,12 +1,8 @@
 import keycloak from '../keycloak'
 import type { CreateTodoRequest, Todo, TodosResponse, UpdateTodoRequest}  from '../types/todo';
 const API_BASE_URL = 'http://localhost:8000/api'
-
-interface ApiRequestOptions {
-  method?: string;
-  headers?: Record<string,string>;
-  body?: any;
-}
+import type { ApiRequestOptions } from '../types/todo'
+import type {RegisterUserRequest, RegisterUserResponse, User} from '../types/users'
 
 class ApiService {
   private getAuthHeaders(): Record<string, string> {
@@ -27,11 +23,12 @@ class ApiService {
 
   private async request<T>(endpoint: string, options: ApiRequestOptions = {}): Promise<T> {
     const url = `${API_BASE_URL}${endpoint}`
+    const requireAuth = options.requireAuth != false;
 
     const config: RequestInit = {
       method: options.method || 'GET',
       headers: {
-        ...this.getAuthHeaders(),
+        ...(requireAuth ? this.getAuthHeaders() : {'Content-Type':'application/json'}),
         ...options.headers,
       },
     };
@@ -46,15 +43,14 @@ class ApiService {
       console.log("config", config)
       const response = await fetch(url, config);
 
-      console.log(`🔍 Response status: ${response.status}`);
+      console.log(`Response status: ${response.status}`);
 
-
-      if(response.status === 401){
+      if(response.status === 401 && requireAuth){
         console.log('401 error - trying to refresh token...');
 
         //token might be expired  try to refresh
         const refreshed = await keycloak.updateToken(30);
-        console.log('🔍 Token refresh result:', refreshed);
+        console.log('Token refresh result:', refreshed);
 
         if (refreshed && keycloak.token){
           console.log('Retrying with new token... ')
@@ -77,7 +73,8 @@ class ApiService {
       }
 
       if(!response.ok){
-        throw new Error(`HTTP error! status: ${response.status}`)
+        const errorText = await response.text();
+        throw new Error(`HTTP error! status: ${response.status}, message: ${errorText}`);
       }
 
       return await response.json();
@@ -87,13 +84,29 @@ class ApiService {
     }
   }
 
+
+
 //   USER ENDPOINTS
+  async registerUser(userData: RegisterUserRequest): Promise<RegisterUserResponse> {
+    return this.request('/users/register',{
+      method: 'POST',
+      body: userData,
+      requireAuth: false,
+    })
+  }
+
   async getProfile(): Promise<any> {
     return this.request('/auth/profile');
   }
 
   async getCurrentUser(): Promise<any>{
     return this.request('/users/me');
+  }
+
+  async syncKeycloakUser(): Promise<User> {
+    return this.request<User>('/users/sync/', {
+      method: 'POST',
+    });
   }
 
   async getTodos(): Promise<TodosResponse> {

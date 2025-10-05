@@ -29,7 +29,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         const authenticated = await keycloak.init({
           onLoad: 'check-sso',
           checkLoginIframe: false,
-          // pkceMethod: 'S256'
+          pkceMethod: 'S256'
         });
         console.log("check authentication", authenticated)
         setAuthenticated(authenticated);
@@ -75,12 +75,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       redirectUri: window.location.origin
     });
   };
-
-  // const logout = () => {
-  //   keycloak.logout({
-  //     redirectUri: window.location.origin
-  //   });
-  // };
 
   const logout = () => {
     localStorage.removeItem('keycloak-token');

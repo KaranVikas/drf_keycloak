@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import {AuthProvider} from "./contexts/AuthContext.tsx";
 import AuthButton from "./components/AuthButton.tsx";
 import ProtectedRoute from './components/ProtectedRoute.tsx'
