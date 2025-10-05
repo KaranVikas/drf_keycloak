@@ -1,9 +1,10 @@
 import React, {useState} from 'react'
 import { userService} from '../services/userService';
-import { RegisterUserRequest, RegisterFormProps, RegisterFormData } from '../types/user';
+import type {RegisterFormData, RegisterFormProps} from "../types/users.ts";
+
 
 const RegisterForm: React.FC<RegisterFormProps> = ({ onRegistrationSuccess, onCancel }) => {
-  const [formData, setFormData ] = useState<RegisterFormData>({
+  const [formData, setFormData] = useState<RegisterFormData>({
     username: '',
     email: '',
     password: '',
@@ -15,48 +16,49 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onRegistrationSuccess, onCa
   const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const {name , value} = e.target
-    setFormData(prev => ({...prev, [name]:value}));
-    //   clear error when user starts typing
-    if(errors[name]){
-      setErrors(prev => ({...prev, [name]:[]}))
+    const {name, value} = e.target;
+    setFormData((prev: RegisterFormData) => ({...prev, [name]: value}));
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors((prev: Record<string, string[]>) => ({...prev, [name]: []}));
     }
   };
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
     setErrors({})
 
-     try{
+    try {
       await userService.registerUser(formData);
       onRegistrationSuccess();
       alert('Registration successful! you can now login');
-     } catch (error: any){
-      if(error.response?.data){
+    } catch (error: any) {
+      if (error.response?.data) {
         setErrors(error.response.data);
       } else {
         setErrors({general: ['Registration  failed. Please try again.']})
       }
-     } finally {
+    } finally {
       setIsLoading(false);
-     }
+    }
   };
 
   const renderFieldError = (fieldName: string) => {
-    if(errors[fieldName]) {
+    if (errors[fieldName]) {
       return (
           <div className="invalid-feedback d-block">
             {errors[fieldName].map((error, index) => (
-              <div key={index}>{error}</div>
-              )
+                    <div key={index}>{error}</div>
+                )
             )}
           </div>
-    )
+      )
     }
     return null;
   };
-  return(
+  return (
       <div className="container-fluid d-flex justify-content-center align-items-center min-vh-100">
         <div className="col-md-6 col-lg-4">
           <div className="card shadow-lg">
@@ -74,86 +76,86 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onRegistrationSuccess, onCa
                   Username <span className="text-danger">*</span>
                 </label>
                 <input
-                  type="text"
-                  id="username"
-                  name="username"
-                  value={formData.username}
-                  onChange={`form-control ${errors.username ? 'is-invalid' : ''}`}
-                  required
-                  disabled={isLoading}
+                    type="text"
+                    id="username"
+                    name="username"
+                    value={formData.username}
+                    onChange={handleChange}
+                    required
+                    disabled={isLoading}
                 />
                 {renderFieldError('username')}
               </div>
 
               <div className="mb-3">
                 <label htmlFor="email" className="form-label">
-                  Username <span className="text-danger">*</span>
+                  Email <span className="text-danger">*</span>
                 </label>
                 <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={`form-control ${errors.username ? 'is-invalid' : ''}`}
-                  required
-                  disabled={isLoading}
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    disabled={isLoading}
                 />
                 {renderFieldError('email')}
               </div>
 
               <div className="mb-3">
                 <label htmlFor="name" className="form-label">
-                  Username <span className="text-danger">*</span>
+                  Name <span className="text-danger">*</span>
                 </label>
                 <input
-                  type="email"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={`form-control ${errors.username ? 'is-invalid' : ''}`}
-                  required
-                  disabled={isLoading}
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    disabled={isLoading}
                 />
                 {renderFieldError('name')}
               </div>
 
               <div className="mb-3">
                 <label htmlFor="password" className="form-label">
-                  Username <span className="text-danger">*</span>
+                  Password <span className="text-danger">*</span>
                 </label>
                 <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  value={formData.password}
-                  onChange={`form-control ${errors.password ? 'is-invalid' : ''}`}
-                  required
-                  disabled={isLoading}
+                    type="password"
+                    id="password"
+                    name="password"
+                    value={formData.password}
+                    onChange={handleChange}
+                    required
+                    disabled={isLoading}
                 />
                 {renderFieldError('password')}
               </div>
 
               <div className="mb-3">
                 <label htmlFor="confirm_password" className="form-label">
-                  Username <span className="text-danger">*</span>
+                  Confirm password <span className="text-danger">*</span>
                 </label>
                 <input
-                  type="password"
-                  id="confirm_password"
-                  name="confirm_password"
-                  value={formData.password}
-                  onChange={`form-control ${errors.confirm_password ? 'is-invalid' : ''}`}
-                  required
-                  disabled={isLoading}
+                    type="password"
+                    id="confirm_password"
+                    name="confirm_password"
+                    value={formData.password}
+                    onChange={handleChange}
+                    required
+                    disabled={isLoading}
                 />
                 {renderFieldError('confirm_password')}
               </div>
 
-              <div className="d-grip gap-2">
+              <div className="d-grid gap-2">
                 <button
-                  type="submit"
-                  disabled={isLoading}
-                  className="btn btn-primary"
+                    type="submit"
+                    disabled={isLoading}
+                    className="btn btn-primary"
                 >
                   {isLoading ? (
                       <>
@@ -161,17 +163,17 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onRegistrationSuccess, onCa
                           Creating Account...
                         </span>
                       </>
-                  ): (
+                  ) : (
                       'Create Account'
                   )}
-              </button>
+                </button>
 
                 {onCancel && (
                     <button
-                      type="button"
-                      onCancel={onCancel}
-                      disabled={isLoading}
-                      className="btn btn-secondary"
+                        type="button"
+                        onClick={onCancel}
+                        disabled={isLoading}
+                        className="btn btn-secondary"
                     >
                       Cancel
                     </button>
@@ -184,5 +186,6 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onRegistrationSuccess, onCa
         </div>
       </div>
   )
+}
 
 export default RegisterForm

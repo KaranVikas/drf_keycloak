@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Extract user-related types into a new `users.ts` file, refactor `RegisterForm` to use updated types and `userService`, and remove redundant interfaces from `todo.ts`.">
+    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Refactor `RegisterForm` for improved form handling, validation, and better error rendering; enhance `TodoApp` to integrate Keycloak registration and user synchronization logic.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/todo/src/components/RegisterForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/components/RegisterForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/todo/src/services/apiService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/services/apiService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/todo/src/services/userService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/services/userService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/todo/src/types/users.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/types/users.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/src/components/TodoApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/components/TodoApp.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +163,7 @@
       <workItem from="1759417937218" duration="3782000" />
       <workItem from="1759424332521" duration="24645000" />
       <workItem from="1759509733439" duration="2497000" />
-      <workItem from="1759586671578" duration="27649000" />
+      <workItem from="1759586671578" duration="36391000" />
     </task>
     <task id="LOCAL-00001" summary="Removed all project-specific and configurational files to clean up the repository.">
       <option name="closed" value="true" />
@@ -511,7 +509,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759615779048</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Refactor `userService` to a class-based structure, update `RegisterForm` to use consolidated API logic, improve error rendering, and enhance main user types.">
+      <option name="closed" value="true" />
+      <created>1759622508092</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1759622508092</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -541,8 +547,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Remove allauth templates, configurations, and related files; clean up project dependencies" />
-    <MESSAGE value="Remove redundant `logoutUris` from Keycloak realm configuration" />
     <MESSAGE value="Integrate Keycloak authentication across frontend and backend, streamline token handling, and improve user service logic." />
     <MESSAGE value="Add Todo app with CRUD functionality and integrate it into the API router." />
     <MESSAGE value="Fix typos in `views.py` and correct model serializer definition in `serializers.py`." />
@@ -566,6 +570,8 @@
     <MESSAGE value="Update `register_user` to router-based `UserViewSet`, refine structure and validation, and enhance authentication endpoints." />
     <MESSAGE value="Integrate `RegisterForm` with `TodoApp`, update `urls.py` for consistent user API routing, improve `publicRequest` logging, and enhance `UserViewSet` with query optimizations." />
     <MESSAGE value="Extract user-related types into a new `users.ts` file, refactor `RegisterForm` to use updated types and `userService`, and remove redundant interfaces from `todo.ts`." />
-    <option name="LAST_COMMIT_MESSAGE" value="Extract user-related types into a new `users.ts` file, refactor `RegisterForm` to use updated types and `userService`, and remove redundant interfaces from `todo.ts`." />
+    <MESSAGE value="Refactor `userService` to a class-based structure, update `RegisterForm` to use consolidated API logic, improve error rendering, and enhance main user types." />
+    <MESSAGE value="Refactor `RegisterForm` for improved form handling, validation, and better error rendering; enhance `TodoApp` to integrate Keycloak registration and user synchronization logic." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor `RegisterForm` for improved form handling, validation, and better error rendering; enhance `TodoApp` to integrate Keycloak registration and user synchronization logic." />
   </component>
 </project>
