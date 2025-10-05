@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { userService} from '../services/userService';
 import { RegisterUserRequest, RegisterFormProps, RegisterFormData } from '../types/user';
 
-const RegisterForm: React.FC<RegisterFormProps> = ({ onSuccess, onCancel }) => {
+const RegisterForm: React.FC<RegisterFormProps> = ({ onRegistrationSuccess, onCancel }) => {
   const [formData, setFormData ] = useState<RegisterFormData>({
     username: '',
     email: '',
@@ -29,9 +29,9 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onSuccess, onCancel }) => {
     setErrors({})
 
      try{
-      await apiService.registerUser(formData);
+      await userService.registerUser(formData);
+      onRegistrationSuccess();
       alert('Registration successful! you can now login');
-      onSuccess?.()
      } catch (error: any){
       if(error.response?.data){
         setErrors(error.response.data);
@@ -45,121 +45,144 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onSuccess, onCancel }) => {
 
   const renderFieldError = (fieldName: string) => {
     if(errors[fieldName]) {
-      return(
-          <div className="container-fluid d-flex jsutify-content-center align-items-center min-vh-100">
-            <div className="col-md-6 col-lg-4">
-              <div className="card shadow-lg">
-                <div className="card-body p-4">
-                  <h2 className="card-title text-center mb-4">Create Account</h2>
-
-                  {errors.general && (
-                      <div className="alert alert-danger" role="alert">
-                        {errors.general.join(', ')}
-                      </div>
-                  )}
-
-                  <form onSubmit={handleSubmit}>
-                    <div className="mb-3">
-                      <label htmlFor="username" className="form-label">
-                        Username <span className="text-danger">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        id="username"
-                        name="username"
-                        value={formData.username}
-                        onChange={handleChange}
-                        className={`form-control ${errors.username ? 'is-invalid' : ''}`}
-                        required
-                        disabled={isLoading}
-                      />
-                      {renderFieldError('username')}
-                    </div>
-                    <div className="mb-3">
-                      <label htmlFor="email" className="form-label">
-                        Username <span className="text-danger">*</span>
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        className={`form-control ${errors.email ? 'is-invalid' : ''}`}
-                        required
-                        disabled={isLoading}
-                      />
-                      {renderFieldError('email')}
-                    </div>
-                    <div className="mb-3">
-                      <label htmlFor="name" className="form-label">
-                        Username <span className="text-danger">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        className={`form-control ${errors.name ? 'is-invalid' : ''}`}
-                        required
-                        disabled={isLoading}
-                      />
-                      {renderFieldError('name')}
-                    </div>
-                    <div className="mb-3">
-                      <label htmlFor="password" className="form-label">
-                        Username <span className="text-danger">*</span>
-                      </label>
-                      <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        value={formData.password}
-                        onChange={handleChange}
-                        className={`form-control ${errors.password ? 'is-invalid' : ''}`}
-                        required
-                        disabled={isLoading}
-                      />
-                      {renderFieldError('password')}
-                    </div>
-
-                    <div className="d-grip gap-2">
-                      <button
-                        type="submit"
-                        disabled={isLoading}
-                        className={"btn btn-primary"}
-                      >
-                        {isLoading ? (
-                            <>
-                              <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true">
-                                Creating Account...
-                              </span>
-                            </>
-                        ) : (
-                            'Create Account'
-                        )}
-                      </button>
-
-                      {onCancel && (
-                          <button
-                            type="button"
-                            onClick={onCancel}
-                            disabled={isLoading}
-                            className="btn btn-secondary"
-                          >
-                            Cancel
-                          </button>
-                      )}
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
+      return (
+          <div className="invalid-feedback d-block">
+            {errors[fieldName].map((error, index) => (
+              <div key={index}>{error}</div>
+              )
+            )}
           </div>
-      )
+    )
     }
-  }
-}
+    return null;
+  };
+  return(
+      <div className="container-fluid d-flex justify-content-center align-items-center min-vh-100">
+        <div className="col-md-6 col-lg-4">
+          <div className="card shadow-lg">
+            <h2 className="card-body text-center mb-4"> Create Account</h2>
+
+            {errors.general && (
+                <div className="alert alert-danger" role="alert">
+                  {errors.general.join(', ')}
+                </div>
+            )}
+
+            <form onSubmit={handleSubmit}>
+              <div className="mb-3">
+                <label htmlFor="username" className="form-label">
+                  Username <span className="text-danger">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  value={formData.username}
+                  onChange={`form-control ${errors.username ? 'is-invalid' : ''}`}
+                  required
+                  disabled={isLoading}
+                />
+                {renderFieldError('username')}
+              </div>
+
+              <div className="mb-3">
+                <label htmlFor="email" className="form-label">
+                  Username <span className="text-danger">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={`form-control ${errors.username ? 'is-invalid' : ''}`}
+                  required
+                  disabled={isLoading}
+                />
+                {renderFieldError('email')}
+              </div>
+
+              <div className="mb-3">
+                <label htmlFor="name" className="form-label">
+                  Username <span className="text-danger">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={`form-control ${errors.username ? 'is-invalid' : ''}`}
+                  required
+                  disabled={isLoading}
+                />
+                {renderFieldError('name')}
+              </div>
+
+              <div className="mb-3">
+                <label htmlFor="password" className="form-label">
+                  Username <span className="text-danger">*</span>
+                </label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  value={formData.password}
+                  onChange={`form-control ${errors.password ? 'is-invalid' : ''}`}
+                  required
+                  disabled={isLoading}
+                />
+                {renderFieldError('password')}
+              </div>
+
+              <div className="mb-3">
+                <label htmlFor="confirm_password" className="form-label">
+                  Username <span className="text-danger">*</span>
+                </label>
+                <input
+                  type="password"
+                  id="confirm_password"
+                  name="confirm_password"
+                  value={formData.password}
+                  onChange={`form-control ${errors.confirm_password ? 'is-invalid' : ''}`}
+                  required
+                  disabled={isLoading}
+                />
+                {renderFieldError('confirm_password')}
+              </div>
+
+              <div className="d-grip gap-2">
+                <button
+                  type="submit"
+                  disabled={isLoading}
+                  className="btn btn-primary"
+                >
+                  {isLoading ? (
+                      <>
+                        <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true">
+                          Creating Account...
+                        </span>
+                      </>
+                  ): (
+                      'Create Account'
+                  )}
+              </button>
+
+                {onCancel && (
+                    <button
+                      type="button"
+                      onCancel={onCancel}
+                      disabled={isLoading}
+                      className="btn btn-secondary"
+                    >
+                      Cancel
+                    </button>
+                )}
+              </div>
+
+
+            </form>
+          </div>
+        </div>
+      </div>
+  )
 
 export default RegisterForm

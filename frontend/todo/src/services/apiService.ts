@@ -2,7 +2,7 @@ import keycloak from '../keycloak'
 import type { CreateTodoRequest, Todo, TodosResponse, UpdateTodoRequest}  from '../types/todo';
 const API_BASE_URL = 'http://localhost:8000/api'
 import type { ApiRequestOptions } from '../types/todo'
-import type {RegisterUserRequest, RegisterUserResponse } from '../types/users'
+import type {RegisterUserRequest, RegisterUserResponse, User} from '../types/users'
 
 class ApiService {
   private getAuthHeaders(): Record<string, string> {
@@ -129,6 +129,12 @@ class ApiService {
 
   async getCurrentUser(): Promise<any>{
     return this.request('/users/me');
+  }
+
+  async syncKeycloakUser(): Promise<User> {
+    return this.request<User>('/users/sync/', {
+      method: 'POST',
+    });
   }
 
   async getTodos(): Promise<TodosResponse> {
