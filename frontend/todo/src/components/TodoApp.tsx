@@ -9,6 +9,7 @@ const TodoApp: React.FC = () => {
   const [userData, setUserData] = useState(null);
   const [apiLoading, setApiLoading] = useState(false);
 
+
   useEffect(() => {
     if (authenticated && !userData) {
       fetchUserData();
@@ -28,20 +29,36 @@ const TodoApp: React.FC = () => {
     }
   };
 
-  // const handleSyncUser = async () => {
-  //   if (!authenticated) return;
-  //
-  //   setApiLoading(true);
-  //   try {
-  //     const data = await userService.syncKeycloakUser();
-  //     setUserData(data);
-  //     console.log('User synced:', data);
-  //   } catch (error) {
-  //     console.error('Sync error:', error);
-  //   } finally {
-  //     setApiLoading(false);
+  // useEffect(() => {
+  // let cancelled = false;
+
+  // const fetchData = async () => {
+  //   if (authenticated && !userData && !apiLoading) {
+  //     setApiLoading(true);
+  //     try {
+  //       const data = await userService.getMe();
+  //       if (!cancelled) { // Prevent state update if component unmounted
+  //         setUserData(data);
+  //       }
+  //     } catch (error) {
+  //       if (!cancelled) {
+  //         console.error('API Error:', error);
+  //       }
+  //     } finally {
+  //       if (!cancelled) {
+  //         setApiLoading(false);
+  //       }
+  //     }
   //   }
   // };
+  //
+  // fetchData();
+  //
+  //   return () => {
+  //     cancelled = true; // Cleanup function
+  //   };
+  // }, [authenticated]);
+
 
   const handleRegister = () => {
     keycloak.register();

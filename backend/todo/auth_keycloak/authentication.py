@@ -22,15 +22,22 @@ class KeycloakJWTAuthentication(BaseAuthentication):
     www_authenticate_realm = "api"
 
     def authenticate(self, request) -> Optional[Tuple[object, dict]]:
+        logger.info(f"🔍 === AUTHENTICATION ATTEMPT ===")
+        logger.info(f"🔍 Request path: {request.path}")
+        logger.info(f"🔍 Request method: {request.method}")
+
         auth = get_authorization_header(request).split()
 
-        # logger.info(f"Auth header received: {auth}")
-        # logger.info(f"KEYCLOAK_JWKS_URL: {settings.KEYCLOAK_JWKS_URL}")
-        # logger.info(f"KEYCLOAK_ISSUER: {settings.KEYCLOAK_ISSUER}")
-        # logger.info(f"KEYCLOAK_AUDIENCE: {settings.KEYCLOAK_AUDIENCE}")
+        logger.info(f"Auth header received: {auth}")
+        logger.info(f"KEYCLOAK_JWKS_URL: {settings.KEYCLOAK_JWKS_URL}")
+        logger.info(f"KEYCLOAK_ISSUER: {settings.KEYCLOAK_ISSUER}")
+        logger.info(f"KEYCLOAK_AUDIENCE: {settings.KEYCLOAK_AUDIENCE}")
+        logger.info(f"🔍 Token audience (aud) )))))))))): {settings.KEYCLOAK_AUDIENCE}")
 
         if not auth or auth[0].lower() != b"bearer":
-            return None
+          logger.warning(f"❌ No Bearer token found or wrong format")
+
+          return None
 
         if len(auth) == 1:
             raise exceptions.AuthenticationFailed("Invalid Authorization header: No credentials provided.")
@@ -39,6 +46,21 @@ class KeycloakJWTAuthentication(BaseAuthentication):
 
         raw_token = auth[1].decode("utf-8")
         logger.info(f"Token received: {raw_token[:50]}...")
+
+        # For debugging token audience
+        try:
+            # Decode WITHOUT verification to see token contents
+            unverified_payload = jwt.decode(raw_token, options={"verify_signature": False})
+            logger.info(f"🔍 Token contents: {unverified_payload}")
+            logger.info(f"🔍 Token audience (aud): {unverified_payload.get('aud')}")
+            logger.info(f"🔍 Token issuer (iss): {unverified_payload.get('iss')}")
+            logger.info(f"🔍 Expected audience: {settings.KEYCLOAK_AUDIENCE}")
+            logger.info(f"🔍 Expected issuer: {settings.KEYCLOAK_ISSUER}")
+        except Exception as e:
+            logger.error(f"Could not decode token for debugging: {e}")
+
+        # stop aud debugging
+
         logger.info(f"KEYCLOAK_JWKS_URL: {settings.KEYCLOAK_JWKS_URL}")
 
         # Use PyJWKClient correctly - point directly to JWKS URL
@@ -59,13 +81,15 @@ class KeycloakJWTAuthentication(BaseAuthentication):
                 raw_token,
                 signing_key.key,
                 algorithms=["RS256"],
-                # audience=settings.KEYCLOAK_AUDIENCE,
+                audience=settings.KEYCLOAK_AUDIENCE,
                 issuer=settings.KEYCLOAK_ISSUER,
                 leeway=settings.KEYCLOAK_LEEWAY,
                 options={
                     "require": ["exp", "iat", "iss"],
+                    "verify_aud": False,
                 },
             )
+
             logger.info('token validation successful')
         except jwt.ExpiredSignatureError as e:
             logger.error(f"❌ Token has expired: {e}")
