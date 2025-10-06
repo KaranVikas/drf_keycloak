@@ -13,6 +13,8 @@ class ApiService {
     // Debug: Log the token
     console.log('Getting auth headers, token:', keycloak.token ? 'Present' : 'Missing');
     console.log('Keycloak authenticated:', keycloak.authenticated);
+    console.log('🔍 Keycloak token exists:', keycloak.token ? 'YES' : 'NO');
+    console.log('🔍 Token from localStorage:', localStorage.getItem('keycloak-token') ? 'YES' : 'NO');
 
     if(keycloak.token){
       headers['Authorization'] = `Bearer ${keycloak.token}`;
@@ -23,12 +25,12 @@ class ApiService {
 
   private async request<T>(endpoint: string, options: ApiRequestOptions = {}): Promise<T> {
     const url = `${API_BASE_URL}${endpoint}`
-    const requireAuth = options.requireAuth != false;
+    // const requireAuth = options.requireAuth != false;
 
     const config: RequestInit = {
       method: options.method || 'GET',
       headers: {
-        ...(requireAuth ? this.getAuthHeaders() : {'Content-Type':'application/json'}),
+        ...( this.getAuthHeaders()),
         ...options.headers,
       },
     };
@@ -45,7 +47,7 @@ class ApiService {
 
       console.log(`Response status: ${response.status}`);
 
-      if(response.status === 401 && requireAuth){
+      if(response.status === 401 ){
         console.log('401 error - trying to refresh token...');
 
         //token might be expired  try to refresh
@@ -91,7 +93,7 @@ class ApiService {
     return this.request('/users/register',{
       method: 'POST',
       body: userData,
-      requireAuth: false,
+      // requireAuth: false,
     })
   }
 
