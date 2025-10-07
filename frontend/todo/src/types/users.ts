@@ -6,14 +6,6 @@ export interface User {
   url?: string;
 }
 
-export interface RegisterUserRequest {
-  username: string;
-  email: string;
-  password: string;
-  confirm_password: string;
-  name?: string;
-}
-
 export interface RegisterUserResponse {
   username: string;
   name: string;

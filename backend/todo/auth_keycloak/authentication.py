@@ -117,6 +117,7 @@ class KeycloakJWTAuthentication(BaseAuthentication):
         logger.info(f"✅ Authentication successful for user: {user.username}")
         return (user, payload)
 
+
     def authenticate_header(self, request) -> str:
         return f'Bearer realm="{self.www_authenticate_realm}"'
 

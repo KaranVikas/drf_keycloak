@@ -87,20 +87,6 @@ class ApiService {
   }
 
 
-
-//   USER ENDPOINTS
-  async registerUser(userData: RegisterUserRequest): Promise<RegisterUserResponse> {
-    return this.request('/users/register',{
-      method: 'POST',
-      body: userData,
-      // requireAuth: false,
-    })
-  }
-
-  async getProfile(): Promise<any> {
-    return this.request('/auth/profile');
-  }
-
   async getCurrentUser(): Promise<any>{
     return this.request('/users/me');
   }

@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Add additional logging for debugging authentication flows, token verification, and Keycloak integration; remove unused `requireAuth` logic from `apiService`.">
+    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Preload JWKS cache during startup and clean up excessive logging in Keycloak authentication module.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/auth_keycloak/authentication.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/auth_keycloak/authentication.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/auth_keycloak/jwks.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/auth_keycloak/jwks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/src/services/apiService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/services/apiService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/todo/src/types/users.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/types/users.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,6 +167,8 @@
       <workItem from="1759684195756" duration="17823000" />
       <workItem from="1759725641347" duration="52000" />
       <workItem from="1759780852411" duration="7512000" />
+      <workItem from="1759851348214" duration="6414000" />
+      <workItem from="1759858961306" duration="1978000" />
     </task>
     <task id="LOCAL-00001" summary="Removed all project-specific and configurational files to clean up the repository.">
       <option name="closed" value="true" />
@@ -544,7 +546,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759717907482</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Preload JWKS cache during startup and clean up excessive logging in Keycloak authentication module.">
+      <option name="closed" value="true" />
+      <created>1759851424789</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1759851424789</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -574,7 +584,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Comment out excessive logging in Keycloak authentication module." />
     <MESSAGE value="Add base components, context, and structure for Todo app in frontend" />
     <MESSAGE value="Define TypeScript interfaces for Todo types and update API service for type-safe operations" />
     <MESSAGE value="Add `TodoItem` component with edit, delete, and toggle completion functionalities" />
@@ -599,6 +608,7 @@
     <MESSAGE value="Enable PKCE method for Keycloak, clean up unused code in `AuthContext`, `apiService`, and `TodoApp`." />
     <MESSAGE value="Remove commented-out code in `AuthContext`, `apiService`, and `TodoApp`, and enable PKCE for Keycloak initialization." />
     <MESSAGE value="Add additional logging for debugging authentication flows, token verification, and Keycloak integration; remove unused `requireAuth` logic from `apiService`." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add additional logging for debugging authentication flows, token verification, and Keycloak integration; remove unused `requireAuth` logic from `apiService`." />
+    <MESSAGE value="Preload JWKS cache during startup and clean up excessive logging in Keycloak authentication module." />
+    <option name="LAST_COMMIT_MESSAGE" value="Preload JWKS cache during startup and clean up excessive logging in Keycloak authentication module." />
   </component>
 </project>
