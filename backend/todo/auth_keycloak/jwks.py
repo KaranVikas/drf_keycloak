@@ -23,6 +23,7 @@ def get_jwks(force: bool = False) -> dict:
     cache.set(CACHE_KEY, jwks, CACHE_TTL)
     return jwks
 
+# Preload JWKS during startup
 def warm_jwks_cache() -> None:
     try:
         get_jwks(force=True)

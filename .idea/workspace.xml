@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Refactor `RegisterForm` for improved form handling, validation, and better error rendering; enhance `TodoApp` to integrate Keycloak registration and user synchronization logic.">
+    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Add additional logging for debugging authentication flows, token verification, and Keycloak integration; remove unused `requireAuth` logic from `apiService`.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/todo/src/components/TodoApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/components/TodoApp.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/todo/src/contexts/AuthContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/contexts/AuthContext.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/todo/src/services/apiService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/todo/src/services/apiService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/auth_keycloak/authentication.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/auth_keycloak/authentication.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/todo/auth_keycloak/jwks.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/auth_keycloak/jwks.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +164,9 @@
       <workItem from="1759424332521" duration="24645000" />
       <workItem from="1759509733439" duration="2497000" />
       <workItem from="1759586671578" duration="38312000" />
-      <workItem from="1759684195756" duration="1586000" />
+      <workItem from="1759684195756" duration="17823000" />
+      <workItem from="1759725641347" duration="52000" />
+      <workItem from="1759780852411" duration="7512000" />
     </task>
     <task id="LOCAL-00001" summary="Removed all project-specific and configurational files to clean up the repository.">
       <option name="closed" value="true" />
@@ -527,7 +528,23 @@
       <option name="project" value="LOCAL" />
       <updated>1759632730195</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Remove commented-out code in `AuthContext`, `apiService`, and `TodoApp`, and enable PKCE for Keycloak initialization.">
+      <option name="closed" value="true" />
+      <created>1759685955782</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1759685955782</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Add additional logging for debugging authentication flows, token verification, and Keycloak integration; remove unused `requireAuth` logic from `apiService`.">
+      <option name="closed" value="true" />
+      <created>1759717907482</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1759717907482</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -557,9 +574,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Integrate Keycloak authentication across frontend and backend, streamline token handling, and improve user service logic." />
-    <MESSAGE value="Add Todo app with CRUD functionality and integrate it into the API router." />
-    <MESSAGE value="Fix typos in `views.py` and correct model serializer definition in `serializers.py`." />
     <MESSAGE value="Comment out excessive logging in Keycloak authentication module." />
     <MESSAGE value="Add base components, context, and structure for Todo app in frontend" />
     <MESSAGE value="Define TypeScript interfaces for Todo types and update API service for type-safe operations" />
@@ -582,6 +596,9 @@
     <MESSAGE value="Extract user-related types into a new `users.ts` file, refactor `RegisterForm` to use updated types and `userService`, and remove redundant interfaces from `todo.ts`." />
     <MESSAGE value="Refactor `userService` to a class-based structure, update `RegisterForm` to use consolidated API logic, improve error rendering, and enhance main user types." />
     <MESSAGE value="Refactor `RegisterForm` for improved form handling, validation, and better error rendering; enhance `TodoApp` to integrate Keycloak registration and user synchronization logic." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor `RegisterForm` for improved form handling, validation, and better error rendering; enhance `TodoApp` to integrate Keycloak registration and user synchronization logic." />
+    <MESSAGE value="Enable PKCE method for Keycloak, clean up unused code in `AuthContext`, `apiService`, and `TodoApp`." />
+    <MESSAGE value="Remove commented-out code in `AuthContext`, `apiService`, and `TodoApp`, and enable PKCE for Keycloak initialization." />
+    <MESSAGE value="Add additional logging for debugging authentication flows, token verification, and Keycloak integration; remove unused `requireAuth` logic from `apiService`." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add additional logging for debugging authentication flows, token verification, and Keycloak integration; remove unused `requireAuth` logic from `apiService`." />
   </component>
 </project>
