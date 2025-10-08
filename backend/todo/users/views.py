@@ -36,6 +36,23 @@ class UserViewSet(GenericViewSet):
       )
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+  @action(detail=False, methods=['post'], url_path='sync')
+  def sync_keycloak_user(self, request):
+    """ Force sync current user data (usually not needed now)"""
+    # This endpoint is now mostly redundant since auto-sync happens during authentication
+    return Response(UserSerializer(request.user).data, status=status.HTTP_200_OK)
+
+  @action(detail=False, methods=['get'], url_path="profile")
+  def profile(self, request):
+    """ Get detailed user profile"""
+    user_data = UserSerializer(request.user).data
+
+    user_data.update({
+      'total_todos': getattr(request.user, 'todos', request.user.todo_set).count(),
+      'is_keycloak_user': bool(request.user.keycloak_id),
+    })
+    return Response(user_data)
+
   @action(detail=False, methods=['get'], url_path='me')
   def me(self, request):
     """Get current user information from JWT token"""

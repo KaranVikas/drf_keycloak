@@ -1,12 +1,16 @@
 import logging
+import uuid
 from typing import Optional, Tuple
 from urllib.parse import splitvalue
 from django.conf import settings
 from rest_framework.authentication import BaseAuthentication, get_authorization_header
 from rest_framework import exceptions
+from django.contrib.auth import get_user_model
 import jwt
 from jwt import PyJWKClient
 from .jwks import get_jwks
+
+User = get_user_model()
 
 logger = logging.getLogger(__name__)
 
@@ -48,16 +52,16 @@ class KeycloakJWTAuthentication(BaseAuthentication):
         logger.info(f"Token received: {raw_token[:50]}...")
 
         # For debugging token audience
-        try:
-            # Decode WITHOUT verification to see token contents
-            unverified_payload = jwt.decode(raw_token, options={"verify_signature": False})
-            logger.info(f"Token contents: {unverified_payload}")
-            logger.info(f"Token audience (aud): {unverified_payload.get('aud')}")
-            logger.info(f"Token issuer (iss): {unverified_payload.get('iss')}")
-            logger.info(f"Expected audience: {settings.KEYCLOAK_AUDIENCE}")
-            logger.info(f"Expected issuer: {settings.KEYCLOAK_ISSUER}")
-        except Exception as e:
-            logger.error(f"Could not decode token for debugging: {e}")
+        # try:
+        #     # Decode WITHOUT verification to see token contents
+        #     unverified_payload = jwt.decode(raw_token, options={"verify_signature": False})
+        #     logger.info(f"Token contents: {unverified_payload}")
+        #     logger.info(f"Token audience (aud): {unverified_payload.get('aud')}")
+        #     logger.info(f"Token issuer (iss): {unverified_payload.get('iss')}")
+        #     logger.info(f"Expected audience: {settings.KEYCLOAK_AUDIENCE}")
+        #     logger.info(f"Expected issuer: {settings.KEYCLOAK_ISSUER}")
+        # except Exception as e:
+        #     logger.error(f"Could not decode token for debugging: {e}")
 
         # stop aud debugging
 
@@ -107,31 +111,101 @@ class KeycloakJWTAuthentication(BaseAuthentication):
           logger.error(f"Error type: {type(e)}")
           raise exceptions.AuthenticationFailed(f"Token validation error: {e}")
 
-        # Build a lightweight user object (no DB hit). You can plug your User model here if desired.
-        user = KeycloakUser(
-            sub=payload.get("sub"),
-            username=payload.get("preferred_username") or payload.get("email") or payload.get("sub"),
-            email=payload.get("email"),
-            raw=payload,
-        )
-        logger.info(f"✅ Authentication successful for user: {user.username}")
-        return (user, payload)
+        keycloak_id = payload.get("sub")
+        username = payload.get("username") or payload.get("email") or keycloak_id
+        email = payload.get("email","")
+        name = payload.get("name", "")
 
+        django_user = self.get_or_create_user(keycloak_id, username, email, name, payload)
+
+        logger.info(f"✅ Authentication successful for user: {django_user.username} (ID: {django_user.id})")
+        return (django_user, payload)
+
+    def get_or_create_user(self, keycloak_id: str, username: str, email: str, name: str, payload: dict):
+      """Get or create Django user from keycloak user"""
+      try:
+        # Try to find the user by keycloak ID first
+        if keycloak_id:
+          user = User.objects.get(keycloak_id=keycloak_id)
+          logger.info(f"found existing user: {user.username }")
+
+          #update user infonif changed
+          updated = False
+          if user.email != email and email:
+            user.email = email
+            updated = True
+
+          if user.name !=name and name:
+            user.name = name
+            updated = True
+
+          if updated:
+            user.save()
+            logger.info(f"Updated user info for: {user.username}")
+
+          return user
+
+      except User.DoesNotExist:
+        pass
+
+      try:
+        # Try to find the user by username
+        user = User.objects.get(username=username)
+        logger.info(f"Found existing user: {user.username}")
+
+        #Link with keycloak ID if not already linked
+        if not user.keycloak_id and keycloak_id:
+          user.keycloak_id = keycloak_id
+          user.save()
+          logger.info(f"Linked existing user: {user.username} with keycloak ID")
+
+        return user
+
+      except User.DoesNotExist:
+        pass
+
+      #Create new user
+      try:
+        user = User.objects.create(
+          username=username,
+          email=email,
+          name=name,
+          keycloak_id=keycloak_id,
+          is_active=True,
+        )
+        logger.info(f"Created new Django user: {user.username} from keycloak user")
+        return user
+      except Exception as e:
+        logger.error(f" Failed to create user: {e}")
+        #If username already exists with different case or special characters,
+
+        #create a unique username
+        import uuid
+        unique_username = f"{username}_{uuid.uuid4().hex[:8]}"
+        user = User.objects.create(
+          username=unique_username,
+          email=email,
+          name=name,
+          keycloak_id=keycloak_id,
+          is_active=True,
+        )
+        logger.info(f"Created new Django user with unique name: {user.username} ")
+        return user
 
     def authenticate_header(self, request) -> str:
         return f'Bearer realm="{self.www_authenticate_realm}"'
 
-class KeycloakUser:
-    """
-    Minimal user object DRF can use. Mark as authenticated.
-    """
-    def __init__(self, sub: str, username: str, email: Optional[str], raw: dict):
-        self.id = sub
-        self.username = username
-        self.email = email
-        self._payload = raw
-
-    @property
-    def is_authenticated(self) -> bool:
-        return True
+# class KeycloakUser:
+#     """
+#     Minimal user object DRF can use. Mark as authenticated.
+#     """
+#     def __init__(self, sub: str, username: str, email: Optional[str], raw: dict):
+#         self.id = sub
+#         self.username = username
+#         self.email = email
+#         self._payload = raw
+#
+#     @property
+#     def is_authenticated(self) -> bool:
+#         return True
 

@@ -28,7 +28,7 @@ class TodoViewSet(ModelViewSet):
     """
       returns actual Todo objects from database
     """
-    return Todo.objects.filter(user_sub = self.request.user.id)
+    return Todo.objects.filter(user_sub = self.request.user)
 
   def get_serializer_class(self):
     """
@@ -53,9 +53,9 @@ class TodoViewSet(ModelViewSet):
     serializer = self.get_serializer(data=request.data)
     serializer.is_valid(raise_exception=True)
 
-    #Save with user_sub from JWT token
+    #Save with Django user from JWT token
 
-    todo = serializer.save(user_sub = request.user.id)
+    todo = serializer.save(user = request.user)
 
 
     #Return full todo data
@@ -63,7 +63,7 @@ class TodoViewSet(ModelViewSet):
     return Response(response_serializer.data, status=status.HTTP_201_CREATED)
 
   def update(self, request, *args, **kwargs):
-    todo = get_object_or_404(Todo, id=kwargs['pk'], user_sub = request.user.id)
+    todo = get_object_or_404(Todo, id=kwargs['pk'], user = request.user)
 
     serializer = TodoSerializer(todo, data=request.data, partial=True)
     serializer.is_valid(raise_exception=True)
@@ -72,7 +72,7 @@ class TodoViewSet(ModelViewSet):
     return Response(serializer.data)
 
   def destroy(self, request, *args, **kwargs):
-    todo = get_object_or_404(Todo, id=kwargs['pk'], user_sub = request.user.id)
+    todo = get_object_or_404(Todo, id=kwargs['pk'], user = request.user)
     todo.delete()
     return Response(status=status.HTTP_204_NO_CONTENT)
 

@@ -5,6 +5,7 @@ class TodoSerializer(serializers.ModelSerializer):
   """
     Serializer for Todo CRUD operations
   """
+  username = serializers.CharField(source='user.username', read_only=True)
 
   class Meta:
     model = Todo
@@ -14,10 +15,11 @@ class TodoSerializer(serializers.ModelSerializer):
       'description',
       'completed',
       'created_at',
-      'updated_at'
+      'updated_at',
+      'username'
     ]
 
-    read_only_fields = ['id', 'created_at', 'updated_at']
+    read_only_fields = ['id', 'created_at', 'updated_at','username']
 
   def validate_title(self, value):
     """Ensuring title is not empty after stripping whitespace """
