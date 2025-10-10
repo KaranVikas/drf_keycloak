@@ -74,7 +74,7 @@ const TodoApp: React.FC = () => {
       <div>
         <h1>Todo App</h1>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', maxWidth: '200px' }}>
-          <button onClick={login}>Login with Keycloak</button>
+          <button onClick={login}>Login with KC</button>
           <button onClick={handleRegister}>Register with Keycloak</button>
         </div>
       </div>

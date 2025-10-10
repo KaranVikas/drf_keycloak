@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Preload JWKS cache during startup and clean up excessive logging in Keycloak authentication module.">
+    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Integrate Keycloak user synchronization with Django user model, refine authentication logic, and enhance `Todo` model/user relationships.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/auth_keycloak/authentication.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/auth_keycloak/authentication.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/todos/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/todos/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/todos/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/todos/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/todos/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/todos/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/users/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/todo/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/todo/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,15 +167,7 @@
       <workItem from="1759780852411" duration="7512000" />
       <workItem from="1759851348214" duration="6414000" />
       <workItem from="1759858961306" duration="16315000" />
-      <workItem from="1759959439213" duration="1596000" />
-    </task>
-    <task id="LOCAL-00001" summary="Removed all project-specific and configurational files to clean up the repository.">
-      <option name="closed" value="true" />
-      <created>1758744314135</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1758744314135</updated>
+      <workItem from="1759959439213" duration="3665000" />
     </task>
     <task id="LOCAL-00002" summary="Added base templates (`base.html`, error pages), and new Django settings for `local`, `test`, and `production` environments. Configured security, email, caching, and Keycloak integration.">
       <option name="closed" value="true" />
@@ -567,7 +553,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759866691588</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Integrate Keycloak user synchronization with Django user model, refine authentication logic, and enhance `Todo` model/user relationships.">
+      <option name="closed" value="true" />
+      <created>1759961186495</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1759961186495</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -597,7 +591,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add base components, context, and structure for Todo app in frontend" />
     <MESSAGE value="Define TypeScript interfaces for Todo types and update API service for type-safe operations" />
     <MESSAGE value="Add `TodoItem` component with edit, delete, and toggle completion functionalities" />
     <MESSAGE value="Refactor `TodoItem` logic into `TodoContext` for improved state management and reusability." />
@@ -622,6 +615,7 @@
     <MESSAGE value="Remove commented-out code in `AuthContext`, `apiService`, and `TodoApp`, and enable PKCE for Keycloak initialization." />
     <MESSAGE value="Add additional logging for debugging authentication flows, token verification, and Keycloak integration; remove unused `requireAuth` logic from `apiService`." />
     <MESSAGE value="Preload JWKS cache during startup and clean up excessive logging in Keycloak authentication module." />
-    <option name="LAST_COMMIT_MESSAGE" value="Preload JWKS cache during startup and clean up excessive logging in Keycloak authentication module." />
+    <MESSAGE value="Integrate Keycloak user synchronization with Django user model, refine authentication logic, and enhance `Todo` model/user relationships." />
+    <option name="LAST_COMMIT_MESSAGE" value="Integrate Keycloak user synchronization with Django user model, refine authentication logic, and enhance `Todo` model/user relationships." />
   </component>
 </project>
