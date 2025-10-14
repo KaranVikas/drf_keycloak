@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Integrate Keycloak user synchronization with Django user model, refine authentication logic, and enhance `Todo` model/user relationships.">
+    <list default="true" id="f2efd6de-4289-4111-b1ff-742b6b15b00e" name="Changes" comment="Update workspace and simplify UI; refine Keycloak login button label">
+      <change afterPath="$PROJECT_DIR$/backend/conftest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/tests/test_e2e.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/settings/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/settings/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pyproject.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +29,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript JSX File" />
-        <option value="Python Script" />
         <option value="TypeScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -168,14 +173,9 @@
       <workItem from="1759851348214" duration="6414000" />
       <workItem from="1759858961306" duration="16315000" />
       <workItem from="1759959439213" duration="3665000" />
-    </task>
-    <task id="LOCAL-00002" summary="Added base templates (`base.html`, error pages), and new Django settings for `local`, `test`, and `production` environments. Configured security, email, caching, and Keycloak integration.">
-      <option name="closed" value="true" />
-      <created>1758753852299</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1758753852299</updated>
+      <workItem from="1760065863607" duration="109000" />
+      <workItem from="1760456205842" duration="317000" />
+      <workItem from="1760456559742" duration="5587000" />
     </task>
     <task id="LOCAL-00003" summary="Add `ProtectedRoute`, `TodoApp`, and `AuthButton` components to frontend">
       <option name="closed" value="true" />
@@ -561,7 +561,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759961186495</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Update workspace and simplify UI; refine Keycloak login button label">
+      <option name="closed" value="true" />
+      <created>1760065940665</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1760065940665</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -591,7 +599,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Define TypeScript interfaces for Todo types and update API service for type-safe operations" />
     <MESSAGE value="Add `TodoItem` component with edit, delete, and toggle completion functionalities" />
     <MESSAGE value="Refactor `TodoItem` logic into `TodoContext` for improved state management and reusability." />
     <MESSAGE value="Add `TodoItem` component with editable fields, delete, and toggle completion functionality" />
@@ -616,6 +623,7 @@
     <MESSAGE value="Add additional logging for debugging authentication flows, token verification, and Keycloak integration; remove unused `requireAuth` logic from `apiService`." />
     <MESSAGE value="Preload JWKS cache during startup and clean up excessive logging in Keycloak authentication module." />
     <MESSAGE value="Integrate Keycloak user synchronization with Django user model, refine authentication logic, and enhance `Todo` model/user relationships." />
-    <option name="LAST_COMMIT_MESSAGE" value="Integrate Keycloak user synchronization with Django user model, refine authentication logic, and enhance `Todo` model/user relationships." />
+    <MESSAGE value="Update workspace and simplify UI; refine Keycloak login button label" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update workspace and simplify UI; refine Keycloak login button label" />
   </component>
 </project>

@@ -36,3 +36,15 @@ TEMPLATES[0]["OPTIONS"]["debug"] = True  # type: ignore[index]
 MEDIA_URL = "http://media.testserver/"
 # Your stuff...
 # ------------------------------------------------------------------------------
+
+
+# DATABASES
+# ------------------------------------------------------------------------------
+DATABASES["default"]["ATOMIC_REQUESTS"] = True
+
+
+# Disable CORS during testing if needed
+CORS_ALLOW_ALL_ORIGINS = True
+
+# For Playwright tests, allow connections from test server
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "testserver"]
