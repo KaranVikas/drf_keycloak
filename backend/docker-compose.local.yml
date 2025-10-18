@@ -27,9 +27,9 @@ services:
     command: ["bash"]
 
   postgres:
-    build:
-      context: .
-      dockerfile: ./compose/production/postgres/Dockerfile
+#    build:
+#      context: .
+#      dockerfile: ./compose/production/postgres/Dockerfile
     image: todo_production_postgres
     container_name: todo_local_postgres
     volumes:

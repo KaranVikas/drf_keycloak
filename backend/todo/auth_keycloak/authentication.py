@@ -52,16 +52,16 @@ class KeycloakJWTAuthentication(BaseAuthentication):
         logger.info(f"Token received: {raw_token[:50]}...")
 
         # For debugging token audience
-        # try:
-        #     # Decode WITHOUT verification to see token contents
-        #     unverified_payload = jwt.decode(raw_token, options={"verify_signature": False})
-        #     logger.info(f"Token contents: {unverified_payload}")
-        #     logger.info(f"Token audience (aud): {unverified_payload.get('aud')}")
-        #     logger.info(f"Token issuer (iss): {unverified_payload.get('iss')}")
-        #     logger.info(f"Expected audience: {settings.KEYCLOAK_AUDIENCE}")
-        #     logger.info(f"Expected issuer: {settings.KEYCLOAK_ISSUER}")
-        # except Exception as e:
-        #     logger.error(f"Could not decode token for debugging: {e}")
+        try:
+            # Decode WITHOUT verification to see token contents
+            unverified_payload = jwt.decode(raw_token, options={"verify_signature": False})
+            logger.info(f"Token contents: {unverified_payload}")
+            logger.info(f"Token audience (aud): {unverified_payload.get('aud')}")
+            logger.info(f"Token issuer (iss): {unverified_payload.get('iss')}")
+            logger.info(f"Expected audience: {settings.KEYCLOAK_AUDIENCE}")
+            logger.info(f"Expected issuer: {settings.KEYCLOAK_ISSUER}")
+        except Exception as e:
+            logger.error(f"Could not decode token for debugging: {e}")
 
         # stop aud debugging
 
